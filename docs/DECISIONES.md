@@ -4,6 +4,14 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-06 — Logo más grande y navegación completa desde `lg`
+
+A pedido del usuario, el logo pasó de 32 px a 40 px (44 px en ≥1024 px).
+Al verificarlo se detectó que el header **ya desbordaba** entre 768–1000 px
+(5 enlaces + toggle + CTA nunca cupieron con el menú de escritorio): se movió
+el breakpoint de la navegación completa de `md` a `lg`, de modo que tablets
+usan el menú hamburguesa. Verificado en 1280 / 800 / 375 px.
+
 ## 2026-07-06 — Nuevo correo receptor de solicitudes
 
 `siteConfig.email` cambia de `nicolas.jls9720@gmail.com` a
