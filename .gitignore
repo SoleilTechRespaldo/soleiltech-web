@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# entregables generados (zips demo)
+/entregables/
+
 # production
 /build
 

@@ -80,6 +80,20 @@ Lista completa y al día en **[CHECKLIST.md → Próximos pasos](CHECKLIST.md)**
 - **Datos de contacto:** todo se edita en `src/lib/site-config.ts` (correo,
   WhatsApp, textos, servicios) — el sitio completo lee de ahí.
 
+## Entregable demo portable
+
+Para generar un zip liviano (~1 MB) que permite ver el sitio completo en
+cualquier PC con Windows sin instalar nada:
+
+```powershell
+powershell -File scripts\crear-entregable.ps1
+```
+
+Produce `entregables/SoleilTech-demo-<fecha>.zip` con la exportación estática
+(`BUILD_STATIC=true`) + un lanzador de doble clic (`VER-SITIO.bat`) que sirve
+el sitio en `http://localhost:8765` usando solo PowerShell. Instrucciones para
+el receptor en el `LEEME.txt` incluido. La carpeta `entregables/` no se versiona.
+
 ## Marca
 
 Los assets del logo (SVG/PNG, temas claro/oscuro, favicons) viven en

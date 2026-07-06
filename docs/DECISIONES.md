@@ -4,6 +4,22 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-06 — Entregable demo portable (exportación estática)
+
+Para revisar el sitio en otro PC sin hosting ni instalaciones, se agregó:
+
+- `next.config.ts`: `output: "export"` + `images.unoptimized` **solo** cuando
+  `BUILD_STATIC=true` — el build normal para hosting no cambia.
+- `robots.ts` / `sitemap.ts` / `manifest.ts`: `export const dynamic =
+  "force-static"` (exigido por Next 16 para exportar; eran estáticos igual).
+- `scripts/crear-entregable.ps1` + `scripts/demo-launcher/`: genera
+  `entregables/SoleilTech-demo-<fecha>.zip` (~1 MB) con el sitio exportado y
+  `VER-SITIO.bat` (servidor HttpListener de PowerShell puro, solo localhost,
+  sin dependencias en el PC receptor). Probado: rutas, assets y 404 OK.
+- Nota: la Access Key de Web3Forms queda embebida en el JS del export
+  (es pública por diseño `NEXT_PUBLIC_*`); el formulario del demo envía
+  correos reales.
+
 ## 2026-07-06 — Logo más grande y navegación completa desde `lg`
 
 A pedido del usuario, el logo pasó de 32 px a 40 px (44 px en ≥1024 px).

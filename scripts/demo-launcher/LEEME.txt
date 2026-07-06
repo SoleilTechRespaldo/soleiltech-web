@@ -1,0 +1,23 @@
+SOLEILTECH — DEMO DEL SITIO WEB (v1)
+=====================================
+
+CÓMO VER EL SITIO (Windows):
+
+  1. Descomprime TODO el zip en una carpeta (clic derecho → "Extraer todo...").
+     No abras los archivos directamente desde dentro del zip.
+  2. Doble clic en  VER-SITIO.bat
+  3. Se abrirá tu navegador en http://localhost:8765 con el sitio completo.
+     Deja la ventana negra abierta mientras revisas; ciérrala al terminar.
+
+NOTAS:
+
+- No necesita internet ni instalar nada: usa Windows PowerShell, que viene
+  incluido en Windows. Todo corre solo en tu equipo (localhost).
+- Si Windows SmartScreen pregunta, elige "Más información → Ejecutar de todas
+  formas": es un script local que solo muestra estos archivos en tu navegador.
+- El formulario de la página Contacto SÍ envía solicitudes reales al correo
+  de SoleilTech si tienes internet — evita enviarlo salvo que quieras probarlo.
+- El sitio incluye el modo claro/oscuro (botón "Amanecer/Anochecer" arriba) y
+  las páginas internas /preview con propuestas de diseño.
+
+Generado: {FECHA} · SoleilTech
