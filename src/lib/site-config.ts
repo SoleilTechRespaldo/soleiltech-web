@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Software a medida, apps móviles y sitios web para empresas en Chile, con recomendación profesional en cada proyecto.",
   url: "https://soleiltech.cl",
-  email: "nicolas.jls9720@gmail.com",
+  email: "nicolasjerez.soleiltech@gmail.com",
   whatsapp: "56965085810",
   get whatsappLink() {
     return `https://wa.me/${this.whatsapp}`;

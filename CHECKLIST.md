@@ -6,14 +6,14 @@
 - **Proyecto:** SoleilTech — sitio web de ventas
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
-- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-05
+- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-06
 - **Fase actual:** 14 — Integraciones externas (formulario de contacto)
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
 ## Próximos pasos inmediatos
 
-1. ☐ **Usuario:** crear cuenta en https://web3forms.com y entregar la Access Key → se configura en `.env.local`.
+1. ☐ **Usuario:** crear cuenta en https://web3forms.com **con `nicolasjerez.soleiltech@gmail.com`** (la key queda ligada a la casilla receptora) y entregar la Access Key → se configura en `.env.local`.
 2. ☐ Probar el formulario de contacto de punta a punta con la key real (Fase 14/15).
 3. ☐ Pruebas de la Fase 15 (flujos, responsive real, datos imperfectos).
 4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año).

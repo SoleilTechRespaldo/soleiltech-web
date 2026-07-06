@@ -4,6 +4,17 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-06 — Nuevo correo receptor de solicitudes
+
+`siteConfig.email` cambia de `nicolas.jls9720@gmail.com` a
+**`nicolasjerez.soleiltech@gmail.com`** (Gmail dedicado al negocio, decisión
+del usuario). Implicancias:
+
+- La cuenta de **Web3Forms debe crearse con el correo nuevo** — la Access Key
+  queda ligada a la casilla que recibe las solicitudes.
+- Plan futuro confirmado: migrar a un correo con dominio propio
+  (p. ej. `contacto@soleiltech.cl`) cuando se compre el dominio (backlog v2).
+
 ## 2026-07-05 — Adopción de la metodología sobre proyecto existente
 
 **Contexto:** la carpeta contenía un sitio Next.js 16 completo (todas las
@@ -48,5 +59,6 @@ raíz se compararon por hash MD5 contra el paquete original
 
 - Destino de `/preview` (integrar alguna propuesta o eliminarlas antes del deploy).
 - Confirmar número de WhatsApp del negocio (`+56 9 6508 5810` en `site-config.ts`).
-- Correo corporativo con dominio propio (hoy: Gmail personal).
+- Correo corporativo con dominio propio (hoy: Gmail del negocio,
+  `nicolasjerez.soleiltech@gmail.com`).
 - Autorizar GitHub + Vercel (puerta G5 antes de cualquier deploy).

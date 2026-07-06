@@ -55,7 +55,7 @@ Local: copia `.env.example` a `.env.local` y completa el valor. En el hosting
 ### Formulario de contacto (obligatorio antes de lanzar)
 
 1. Crea una cuenta gratis en https://web3forms.com **con el correo que debe
-   recibir las solicitudes** (hoy: `nicolas.jls9720@gmail.com`, definido en
+   recibir las solicitudes** (hoy: `nicolasjerez.soleiltech@gmail.com`, definido en
    `src/lib/site-config.ts`).
 2. Copia el "Access Key" y pégalo en `.env.local`.
 3. Al desplegar, agrega la misma variable en el hosting.

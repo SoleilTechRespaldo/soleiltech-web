@@ -64,7 +64,7 @@ edita en el código (`src/lib/site-config.ts`) y se publica con un deploy.
 | RI-02 | Comprar dominio `soleiltech.cl` (NIC Chile) | Decisión G1: pendiente de compra |
 | RI-03 | Reemplazar estado vacío de `/proyectos` con proyectos reales | Cuando existan casos |
 | RI-04 | Respaldo remoto (GitHub privado) y deploy (Vercel) | Usuario decidió postergar: solo Git local por ahora |
-| RI-05 | Correo corporativo (hoy recibe en Gmail personal) | Requiere dominio propio |
+| RI-05 | Correo corporativo con dominio propio (hoy recibe en el Gmail del negocio: `nicolasjerez.soleiltech@gmail.com`) | Requiere dominio propio |
 
 ### Deseables (v2 — fuera de alcance de v1)
 
