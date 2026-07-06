@@ -7,14 +7,14 @@
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
 - **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-06
-- **Fase actual:** 14 — Integraciones externas (formulario de contacto)
+- **Fase actual:** 15 — Pruebas
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
 ## Próximos pasos inmediatos
 
-1. ☐ **Usuario:** crear cuenta en https://web3forms.com **con `nicolasjerez.soleiltech@gmail.com`** (la key queda ligada a la casilla receptora) y entregar la Access Key → se configura en `.env.local`.
-2. ☐ Probar el formulario de contacto de punta a punta con la key real (Fase 14/15).
+1. ✅ ~~Crear cuenta Web3Forms y configurar Access Key~~ (2026-07-06, en `.env.local`; ligada a `nicolasjerez.soleiltech@gmail.com`)
+2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK, HTTP 200 + pantalla de éxito; caso de fallo cubierto por diseño — sin key el sitio degradaba a WhatsApp). **Pendiente: usuario confirma que el correo llegó a la casilla.**
 3. ☐ Pruebas de la Fase 15 (flujos, responsive real, datos imperfectos).
 4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año).
 5. ☐ Crear repo privado en GitHub + conectar Vercel (cuando el usuario lo autorice).
@@ -39,7 +39,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 | 11 | Desarrollo backend | ➖ | sin backend propio en v1 |
 | 12 | Desarrollo frontend | ✅ | adoptado — todas las pantallas construidas |
 | 13 | Integración | ➖ | sin backend que integrar (adaptación "sitio estático") |
-| 14 | Integraciones externas | 🔄 | Web3Forms a la espera de la Access Key |
+| 14 | Integraciones externas | ✅ | 2026-07-06 — Web3Forms configurado y probado (envío real exitoso) |
 | 15 | Pruebas | ☐ | |
 | 16 | Optimización | ☐ | |
 | 17 | Preparación para producción | ☐ | |
@@ -124,7 +124,7 @@ git checkout -b develop && git push -u origin develop
 - [x] Linter configurado y sin errores (`npm run lint`)
 - [x] Build de producción compila sin errores (`npm run build`)
 - [ ] Pruebas manuales documentadas (F15): flujos, datos imperfectos (tildes, ñ, textos largos, doble click), responsive real
-- [ ] Prueba real del formulario con la Access Key
+- [x] Prueba real del formulario con la Access Key (2026-07-06: POST 200 + pantalla de éxito, con tildes/eñes en el mensaje)
 - [ ] Lighthouse / Core Web Vitals (F16)
 - ➖ Pruebas unitarias/integración — sin lógica de negocio propia en v1; reevaluar en v2
 
