@@ -6,8 +6,8 @@
 - **Proyecto:** SoleilTech — sitio web de ventas
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
-- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-06
-- **Fase actual:** 15 — Pruebas
+- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-07
+- **Fase actual:** 16 — Optimización
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
@@ -15,7 +15,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
 1. ✅ ~~Crear cuenta Web3Forms y configurar Access Key~~ (2026-07-06, en `.env.local`; ligada a `nicolasjerez.soleiltech@gmail.com`)
 2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK + **correo confirmado por el usuario** — llega a la pestaña Promociones; creó la etiqueta "SoleilTech Solicitudes" para marcarlas al tiro).
-3. 🔄 Pruebas de la Fase 15 (flujos, responsive real, datos imperfectos). Avance 2026-07-06: hero y encabezados centrados en móvil a pedido del usuario.
+3. ✅ ~~Pruebas de la Fase 15~~ (2026-07-07: modo oscuro verificado en las 8 páginas, formulario con datos imperfectos bloqueado correctamente, 404 propia OK, consola limpia, lint limpio, responsive verificado en 375/800/1280).
 4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año) — lo hará el **próximo mes** (agosto 2026, con el pago).
 5. ☐ Repo privado en GitHub + Vercel — **en cuenta GitHub de la empresa**, cuando estén: decisión de previews + dominio comprado + correo corporativo Gmail.
 6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
@@ -40,7 +40,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 | 12 | Desarrollo frontend | ✅ | adoptado — todas las pantallas construidas |
 | 13 | Integración | ➖ | sin backend que integrar (adaptación "sitio estático") |
 | 14 | Integraciones externas | ✅ | 2026-07-06 — Web3Forms configurado y probado (envío real exitoso) |
-| 15 | Pruebas | ☐ | |
+| 15 | Pruebas | ✅ | 2026-07-07 |
 | 16 | Optimización | ☐ | |
 | 17 | Preparación para producción | ☐ | |
 | 18 | Despliegue | ☐ | |
@@ -124,7 +124,7 @@ git checkout -b develop && git push -u origin develop
 
 - [x] Linter configurado y sin errores (`npm run lint`)
 - [x] Build de producción compila sin errores (`npm run build`)
-- [ ] Pruebas manuales documentadas (F15): flujos, datos imperfectos (tildes, ñ, textos largos, doble click), responsive real
+- [x] Pruebas manuales documentadas (F15, 2026-07-07): tema oscuro en las 8 páginas (fondo `#0B1437` y logo oro verificados) · formulario: vacío bloqueado, correo inválido bloqueado con mensaje, texto largo con tildes/ñ/emoji/`<script>` sin romper layout, botón deshabilitado durante envío · 404 propia renderiza · consola del navegador sin errores ni warnings · responsive 375/800/1280
 - [x] Prueba real del formulario con la Access Key (2026-07-06: POST 200 + pantalla de éxito, con tildes/eñes en el mensaje)
 - [ ] Lighthouse / Core Web Vitals (F16)
 - ➖ Pruebas unitarias/integración — sin lógica de negocio propia en v1; reevaluar en v2
