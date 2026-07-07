@@ -4,6 +4,22 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-07 — Reposicionamiento de textos (decisiones del usuario)
+
+- **De pymes a empresas de todos los tamaños**: se eliminó "pymes" de todo
+  el sitio (tagline/título, hero del inicio, tarjeta de Nosotros —ahora
+  "Cercanía con cada cliente"— y metadatos). Nosotros abre con el texto
+  dictado por el usuario: "empresas grandes y pequeñas en todo el
+  territorio nacional".
+- **"Próximamente" → "Futuramente"** en todo el sitio para el trabajo en
+  terreno: el usuario desconoce cuándo podrá ofrecerlo y no quiere
+  comprometer plazos.
+- **Alcance geográfico en las etiquetas del hero**: Software = "Trabajos
+  nacionales"; Infraestructura en terreno = "Región de Valparaíso". Se
+  eliminó el rótulo "CHILE · TRABAJOS NACIONALES" (redundante; el dominio
+  .cl ya sitúa el sitio).
+- Contacto: cobertura reescrita a "Trabajamos con empresas chilenas".
+
 ## 2026-07-06 — Previews descartadas y centrado móvil en todo el sitio
 
 - El usuario revisó las 2 propuestas de diseño alternativas (`/preview/

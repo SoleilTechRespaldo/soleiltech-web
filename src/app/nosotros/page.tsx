@@ -5,7 +5,7 @@ import { ArrowRight, Target, Handshake, Wrench } from "lucide-react";
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "SoleilTech es una empresa chilena que recién comienza en el desarrollo tecnológico, ayudando a pymes a mejorar su operación y su identidad web.",
+    "SoleilTech es una empresa chilena que recién comienza en el desarrollo tecnológico, ayudando a empresas de todos los tamaños a mejorar su operación y su identidad web.",
 };
 
 const pillars = [
@@ -16,8 +16,8 @@ const pillars = [
   },
   {
     icon: Handshake,
-    title: "Pymes primero",
-    text: "Nos enfocamos en ayudar a pequeñas y medianas empresas a mejorar su operación y su presencia en la web, con soluciones a su medida y presupuesto.",
+    title: "Cercanía con cada cliente",
+    text: "Ayudamos a empresas grandes y pequeñas a mejorar su operación y su presencia en la web, con soluciones a la medida de cada presupuesto.",
   },
   {
     icon: Wrench,

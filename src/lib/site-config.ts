@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "SoleilTech",
-  tagline: "Desarrollo de software a medida para pymes chilenas",
+  tagline: "Desarrollo de software a medida para empresas chilenas",
   description:
     "Software a medida, apps móviles y sitios web para empresas en Chile, con recomendación profesional en cada proyecto.",
   url: "https://soleiltech.cl",
