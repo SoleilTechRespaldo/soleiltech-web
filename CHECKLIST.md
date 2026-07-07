@@ -14,13 +14,13 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 ## Próximos pasos inmediatos
 
 1. ✅ ~~Crear cuenta Web3Forms y configurar Access Key~~ (2026-07-06, en `.env.local`; ligada a `nicolasjerez.soleiltech@gmail.com`)
-2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK, HTTP 200 + pantalla de éxito; caso de fallo cubierto por diseño — sin key el sitio degradaba a WhatsApp). **Pendiente: usuario confirma que el correo llegó a la casilla.**
-3. ☐ Pruebas de la Fase 15 (flujos, responsive real, datos imperfectos).
-4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año).
-5. ☐ Crear repo privado en GitHub + conectar Vercel (cuando el usuario lo autorice).
-6. ☐ Reemplazar estado vacío de `/proyectos` con proyectos reales.
-7. ☐ Decidir destino de las páginas `/preview` (integrar o eliminar antes del deploy).
-8. ☐ Confirmar número de WhatsApp del negocio (`+56 9 6508 5810`).
+2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK + **correo confirmado por el usuario** — llega a la pestaña Promociones; creó la etiqueta "SoleilTech Solicitudes" para marcarlas al tiro).
+3. 🔄 Pruebas de la Fase 15 (flujos, responsive real, datos imperfectos). Avance 2026-07-06: hero y encabezados centrados en móvil a pedido del usuario.
+4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año) — lo hará el **próximo mes** (agosto 2026, con el pago).
+5. ☐ Repo privado en GitHub + Vercel — **en cuenta GitHub de la empresa**, cuando estén: decisión de previews + dominio comprado + correo corporativo Gmail.
+6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
+7. ☐ Decidir destino de las páginas `/preview` (previews mostradas al usuario 2026-07-06, decisión en curso).
+8. ✅ ~~Confirmar número de WhatsApp~~ (2026-07-06: `+56 9 6508 5810` es el personal y es correcto **por ahora**; comprará un chip de empresa → cambiar en `site-config.ts` cuando llegue).
 
 ## Estado de fases
 
@@ -77,6 +77,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 - [x] Validaciones de formulario (required, email, tel)
 - [x] Estados de carga / error / vacío donde aplica
 - [x] Responsive (verificación formal pendiente en F15)
+- [x] Móvil: hero y encabezados de sección centrados (2026-07-06, pedido del usuario)
 - [x] Accesibilidad básica (skip-link, labels, foco, contraste de paleta)
 - [x] Tema oscuro
 - [ ] Decidir destino de `/preview` (propuestas internas, hoy excluidas de robots)
@@ -156,6 +157,7 @@ git checkout -b develop && git push -u origin develop
 |---|---|---|
 | Alta | Portafolio real en `/proyectos` | ☐ |
 | Alta | Correo corporativo con dominio propio | ☐ |
+| Alta | WhatsApp de empresa (chip nuevo) → actualizar `site-config.ts` | ☐ |
 | Media | Analytics (Vercel Analytics o similar) | ☐ |
 | Media | Cotizador en línea | ☐ |
 | Media | Correo transaccional al cliente (Resend/Postmark) | ☐ |

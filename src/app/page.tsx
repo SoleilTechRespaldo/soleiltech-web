@@ -28,11 +28,11 @@ export default function Home() {
     <>
       <section className="border-b border-border bg-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:items-center md:py-28">
-          <div>
+          <div className="text-center md:text-left">
             <span className="text-xs font-semibold uppercase tracking-wide text-primary">
               Chile · trabajos nacionales
             </span>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
               {heroBadges.map((badge) => (
                 <span
                   key={badge.label}
@@ -46,12 +46,12 @@ export default function Home() {
             <h1 className="mt-5 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
               Su próximo amanecer digital
             </h1>
-            <p className="mt-5 max-w-lg text-base text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-5 max-w-lg text-base text-muted-foreground sm:text-lg md:mx-0">
               Desarrollamos software, apps móviles y sitios web para pymes
               chilenas. La instalación de redes, cámaras e infraestructura
               informática en terreno se suma próximamente.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
               <Link
                 href="/contacto"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
@@ -81,7 +81,7 @@ export default function Home() {
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <div className="flex items-end justify-between gap-4">
+          <div className="flex items-end justify-center gap-4 text-center sm:justify-between sm:text-left">
             <div>
               <h2 className="font-display text-2xl sm:text-3xl">Qué hacemos</h2>
               <p className="mt-2 text-muted-foreground">
@@ -128,7 +128,7 @@ export default function Home() {
 
           <Link
             href="/servicios"
-            className="mt-8 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline sm:hidden"
+            className="mx-auto mt-8 flex w-fit items-center gap-1 text-sm font-semibold text-primary hover:underline sm:hidden"
           >
             Ver todos los servicios <ArrowRight className="h-4 w-4" />
           </Link>
