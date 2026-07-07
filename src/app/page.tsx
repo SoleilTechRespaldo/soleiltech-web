@@ -36,9 +36,12 @@ export default function Home() {
               {heroBadges.map((badge) => (
                 <span
                   key={badge.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-muted px-3 py-1 text-xs font-semibold text-muted-foreground"
+                  className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-border bg-surface-muted px-3 py-1 text-xs font-semibold text-muted-foreground"
                 >
                   {badge.label}
+                  {badge.scope && (
+                    <span className="font-normal">· {badge.scope}</span>
+                  )}
                   {badge.comingSoon && <ComingSoonBadge service={badge.label} />}
                 </span>
               ))}

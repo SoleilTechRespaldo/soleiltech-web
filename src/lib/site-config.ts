@@ -32,8 +32,12 @@ export type Service = {
 };
 
 export const heroBadges = [
-  { label: "Software · apps · web" },
-  { label: "Infraestructura en terreno", comingSoon: true },
+  { label: "Software · apps · web", scope: "Trabajos nacionales" },
+  {
+    label: "Infraestructura en terreno",
+    scope: "Región de Valparaíso",
+    comingSoon: true,
+  },
 ];
 
 export const services: Service[] = [
