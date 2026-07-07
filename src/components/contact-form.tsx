@@ -103,7 +103,7 @@ export function ContactForm() {
           {services.map((service) => (
             <option key={service.slug} value={service.title} disabled={service.comingSoon}>
               {service.title}
-              {service.comingSoon ? " (Próximamente)" : ""}
+              {service.comingSoon ? " (Futuramente)" : ""}
             </option>
           ))}
           <option value="Otro">Otro / no estoy seguro</option>

@@ -59,7 +59,7 @@ export function ComingSoonBadge({ service }: { service: string }) {
         aria-expanded={open}
         className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-primary transition hover:bg-primary/25"
       >
-        <Clock className="h-3 w-3" /> Próximamente
+        <Clock className="h-3 w-3" /> Futuramente
       </button>
 
       {open && (
@@ -69,7 +69,7 @@ export function ComingSoonBadge({ service }: { service: string }) {
             escríbenos y vemos cómo ayudarte igual.
           </p>
           <WhatsAppButton
-            message={`Hola SoleilTech, me interesa el servicio de ${service}, vi que está marcado como próximamente.`}
+            message={`Hola SoleilTech, me interesa el servicio de ${service}, vi que está marcado como futuramente.`}
             className="mt-3 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-secondary-foreground transition hover:opacity-90"
           />
 

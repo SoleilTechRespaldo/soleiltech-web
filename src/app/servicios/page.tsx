@@ -8,7 +8,7 @@ import { services } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Desarrollo de software, apps móviles y sitios web en Chile. Infraestructura técnica en terreno, próximamente.",
+    "Desarrollo de software, apps móviles y sitios web en Chile. Infraestructura técnica en terreno, futuramente.",
 };
 
 export default function ServiciosPage() {
@@ -20,7 +20,7 @@ export default function ServiciosPage() {
         </h1>
         <p className="mt-4 text-muted-foreground">
           Hoy desarrollamos software, apps y sitios web. La infraestructura
-          técnica en terreno está marcada como próximamente. Cada proyecto
+          técnica en terreno está marcada como futuramente. Cada proyecto
           parte con una conversación para entender tu requerimiento real
           antes de proponer una solución.
         </p>

@@ -33,10 +33,11 @@ export default function NosotrosPage() {
         Nosotros
       </h1>
       <p className="mt-5 max-w-2xl text-center text-muted-foreground sm:text-left">
-        SoleilTech nace para acompañar a empresas chilenas —
-        especialmente pymes— en su transformación tecnológica: hoy, con el
-        software, las apps y los sitios que necesitan; próximamente, con
-        la instalación de redes, cámaras e infraestructura en terreno.
+        SoleilTech nace para acompañar a empresas grandes y pequeñas en
+        todo el territorio nacional, en su transformación tecnológica,
+        desarrollando el software, las apps y los sitios web y móviles que
+        necesiten; futuramente, con la instalación de redes, cámaras e
+        infraestructura en terreno.
       </p>
       <p className="mt-3 max-w-2xl text-center text-sm text-muted-foreground sm:text-left">
         Hasta el sitio tiene su propio amanecer y anochecer — el botón de

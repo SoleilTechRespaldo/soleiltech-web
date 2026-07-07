@@ -19,7 +19,7 @@ const valueProps = [
   {
     icon: Network,
     title: "Pensado para crecer contigo",
-    text: "Empezamos con software; la infraestructura técnica en terreno se suma próximamente.",
+    text: "Empezamos con software; la infraestructura técnica en terreno se suma futuramente.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Home() {
             <p className="mx-auto mt-5 max-w-lg text-base text-muted-foreground sm:text-lg md:mx-0">
               Desarrollamos software, apps móviles y sitios web para pymes
               chilenas. La instalación de redes, cámaras e infraestructura
-              informática en terreno se suma próximamente.
+              informática en terreno se suma futuramente.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
               <Link

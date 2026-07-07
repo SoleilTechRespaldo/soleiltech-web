@@ -58,7 +58,7 @@ export default function ContactoPage() {
             </h2>
             <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              Trabajamos con empresas en todo Chile. Reuniones virtuales o
+              Trabajamos con empresas chilenas. Reuniones virtuales o
               presenciales según la disponibilidad de ambas partes, para
               levantar requerimientos, firmar acuerdos y coordinar entregas.
             </p>
