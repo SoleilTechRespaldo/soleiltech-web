@@ -29,16 +29,16 @@ const pillars = [
 export default function NosotrosPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
-      <h1 className="font-display text-3xl sm:text-4xl">
+      <h1 className="text-center font-display text-3xl sm:text-left sm:text-4xl">
         Nosotros
       </h1>
-      <p className="mt-5 max-w-2xl text-muted-foreground">
+      <p className="mt-5 max-w-2xl text-center text-muted-foreground sm:text-left">
         SoleilTech nace para acompañar a empresas chilenas —
         especialmente pymes— en su transformación tecnológica: hoy, con el
         software, las apps y los sitios que necesitan; próximamente, con
         la instalación de redes, cámaras e infraestructura en terreno.
       </p>
-      <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+      <p className="mt-3 max-w-2xl text-center text-sm text-muted-foreground sm:text-left">
         Hasta el sitio tiene su propio amanecer y anochecer — el botón de
         tema del header cambia de nombre, no solo de color.
       </p>

@@ -19,7 +19,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año) — lo hará el **próximo mes** (agosto 2026, con el pago).
 5. ☐ Repo privado en GitHub + Vercel — **en cuenta GitHub de la empresa**, cuando estén: decisión de previews + dominio comprado + correo corporativo Gmail.
 6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
-7. ☐ Decidir destino de las páginas `/preview` (previews mostradas al usuario 2026-07-06, decisión en curso).
+7. ✅ ~~Decidir destino de las páginas `/preview`~~ (2026-07-06: mostradas al usuario, no le gustaron → **eliminadas**; recuperables desde el historial de Git).
 8. ✅ ~~Confirmar número de WhatsApp~~ (2026-07-06: `+56 9 6508 5810` es el personal y es correcto **por ahora**; comprará un chip de empresa → cambiar en `site-config.ts` cuando llegue).
 
 ## Estado de fases
@@ -34,7 +34,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 | 6 | Repositorio privado en GitHub | ☐ | postergado por decisión del usuario |
 | 7 | Documentación inicial | ✅ | 2026-07-05 |
 | 8 | Checklist general | ✅ | 2026-07-05 |
-| 9 | Diseño UX/UI (mockups) | ✅ | adoptado — sitio ya construido; 2 propuestas extra en `/preview` |
+| 9 | Diseño UX/UI (mockups) | ✅ | adoptado — sitio ya construido; propuestas `/preview` descartadas 2026-07-06 |
 | 10 | Diseño de base de datos | ➖ | sin BD en v1 |
 | 11 | Desarrollo backend | ➖ | sin backend propio en v1 |
 | 12 | Desarrollo frontend | ✅ | adoptado — todas las pantallas construidas |
@@ -77,10 +77,10 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 - [x] Validaciones de formulario (required, email, tel)
 - [x] Estados de carga / error / vacío donde aplica
 - [x] Responsive (verificación formal pendiente en F15)
-- [x] Móvil: hero y encabezados de sección centrados (2026-07-06, pedido del usuario)
+- [x] Móvil: hero y encabezados centrados en todas las páginas (2026-07-06, pedido del usuario)
 - [x] Accesibilidad básica (skip-link, labels, foco, contraste de paleta)
 - [x] Tema oscuro
-- [ ] Decidir destino de `/preview` (propuestas internas, hoy excluidas de robots)
+- [x] `/preview` eliminadas — propuestas descartadas por el usuario (2026-07-06; en historial Git)
 
 ## Backend
 

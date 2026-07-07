@@ -4,6 +4,17 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-06 — Previews descartadas y centrado móvil en todo el sitio
+
+- El usuario revisó las 2 propuestas de diseño alternativas (`/preview/
+  amanecer-scroll` y `/preview/consola-amanecer`) con capturas: **no le
+  gustaron** → eliminadas del código (recuperables en el historial de Git).
+  Se retiró también el `disallow: /preview/` de `robots.ts`, ya innecesario.
+- A pedido del usuario, en pantallas móviles el texto de portada y los
+  encabezados de página (Inicio, Servicios, Proyectos, Nosotros, Contacto)
+  van **centrados**; en escritorio se mantiene la alineación izquierda.
+  El contenido de tarjetas y listas sigue a la izquierda por legibilidad.
+
 ## 2026-07-06 — Entregable demo portable (exportación estática)
 
 Para revisar el sitio en otro PC sin hosting ni instalaciones, se agregó:

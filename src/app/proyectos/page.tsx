@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function ProyectosPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
-      <h1 className="font-display text-3xl sm:text-4xl">
+      <h1 className="text-center font-display text-3xl sm:text-left sm:text-4xl">
         Proyectos
       </h1>
-      <p className="mt-4 max-w-xl text-muted-foreground">
+      <p className="mt-4 max-w-xl text-center text-muted-foreground sm:text-left">
         Aún no tenemos proyectos publicados aquí — los estamos preparando.
       </p>
 
