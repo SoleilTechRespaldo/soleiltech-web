@@ -29,10 +29,7 @@ export default function Home() {
       <section className="border-b border-border bg-surface">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:items-center md:py-28">
           <div className="text-center md:text-left">
-            <span className="text-xs font-semibold uppercase tracking-wide text-primary">
-              Chile · trabajos nacionales
-            </span>
-            <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+            <div className="flex flex-wrap justify-center gap-2 md:justify-start">
               {heroBadges.map((badge) => (
                 <span
                   key={badge.label}
