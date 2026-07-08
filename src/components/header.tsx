@@ -67,7 +67,7 @@ export function Header() {
                   onClick={() => setOpen(false)}
                   className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition ${
                     pathname === link.href
-                      ? "bg-surface-muted text-primary"
+                      ? "bg-surface-muted font-semibold text-foreground"
                       : "text-foreground hover:bg-surface-muted"
                   }`}
                 >

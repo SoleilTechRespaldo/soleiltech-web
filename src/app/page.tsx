@@ -73,7 +73,7 @@ export default function Home() {
           {valueProps.map((item) => (
             <div key={item.title} className="rounded-2xl border border-border bg-surface p-6">
               <item.icon className="h-8 w-8 text-secondary" />
-              <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+              <h2 className="mt-4 text-lg font-semibold">{item.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
             </div>
           ))}
@@ -141,7 +141,7 @@ export default function Home() {
           <h2 className="font-display text-2xl sm:text-3xl">
             ¿Tienes un proyecto o requerimiento técnico?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm opacity-90 sm:text-base">
+          <p className="mx-auto mt-3 max-w-xl text-sm sm:text-base">
             Cuéntanos qué necesitas y coordinamos una reunión virtual o
             presencial para definir el alcance.
           </p>

@@ -57,7 +57,7 @@ export function ComingSoonBadge({ service }: { service: string }) {
           setOpen((v) => !v);
         }}
         aria-expanded={open}
-        className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-primary transition hover:bg-primary/25"
+        className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2.5 py-1 text-xs font-semibold text-badge-foreground transition hover:bg-primary/25"
       >
         <Clock className="h-3 w-3" /> Futuramente
       </button>

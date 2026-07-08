@@ -4,6 +4,38 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-07 — Fase 16: optimización medida con Lighthouse (A11y 94 → 100)
+
+Medición sobre build de producción (`next start`), Chrome headless.
+
+| Página | Antes | Después |
+|---|---|---|
+| Inicio | Perf 97 · A11y 94 · BP 100 · SEO 100 | Perf 96 · A11y **100** · BP 100 · SEO 100 |
+| Contacto | (sin medir) | Perf 96 · A11y **100** · BP 100 · SEO 100 |
+| Servicios | (sin medir) | Perf 97 · A11y **100** · BP 100 · SEO 100 |
+
+Correcciones aplicadas (todas por contraste WCAG 4.5:1 u orden de encabezados):
+
+- `--primary` claro `#C56A14` → **`#A85808`** (blanco sobre primario 3.85→5.17;
+  primario sobre fondos 4.19→4.69+). **El logo NO cambia** — sus degradados
+  van incrustados en los SVG con los colores de marca originales.
+- `--muted-foreground` claro `#8A6A45` → **`#6F5335`** (3.98→5.69 sobre
+  surface-muted).
+- `--secondary-foreground` blanco → **azul noche `#0B1437`** (texto sobre el
+  cian del botón WhatsApp: 3.48→4.79). Aplica en ambos temas.
+- Nuevo token `--badge-foreground` (`#7A3D08` claro / oro oscuro) para el
+  texto de la pill "Futuramente" sobre su tinte (2.65→5.62). Primero se
+  intentó una clase arbitraria de Tailwind que no ganó la cascada; el token
+  del design system es la solución robusta.
+- `.coming-soon-block` ya no usa `opacity: 0.6` (rompía el contraste de todo
+  su contenido, ratios 1.83–2.22); el atenuado queda por borde punteado y
+  colores muted.
+- Inicio: tarjetas de propuestas de valor `h3` → `h2` (orden secuencial de
+  encabezados) y quitado `opacity-90` del párrafo sobre fondo primario.
+- `manifest.ts`: `theme_color` actualizado al primario nuevo.
+- Perf 96–97: LCP 2,6 s bajo throttling simulado 4G es el piso del hero con
+  tipografía display; CLS 0.001 y TBT 50 ms excelentes. Sin acción.
+
 ## 2026-07-07 — Marca v3.1: palabra centrada con el sol + sol de 5 rayos en el hero
 
 - **Lockups**: por decisión del usuario, "SoleilTech" ya no comparte base con

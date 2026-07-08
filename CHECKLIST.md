@@ -7,7 +7,7 @@
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
 - **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-07
-- **Fase actual:** 16 — Optimización
+- **Fase actual:** 17 — Preparación para producción
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
@@ -41,7 +41,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 | 13 | Integración | ➖ | sin backend que integrar (adaptación "sitio estático") |
 | 14 | Integraciones externas | ✅ | 2026-07-06 — Web3Forms configurado y probado (envío real exitoso) |
 | 15 | Pruebas | ✅ | 2026-07-07 |
-| 16 | Optimización | ☐ | |
+| 16 | Optimización | ✅ | 2026-07-07 — Lighthouse: A11y 94→100, Perf 96-97, BP 100, SEO 100 |
 | 17 | Preparación para producción | ☐ | |
 | 18 | Despliegue | ☐ | |
 | 19 | Mantenimiento | ☐ | inicia con el lanzamiento |
@@ -126,7 +126,7 @@ git checkout -b develop && git push -u origin develop
 - [x] Build de producción compila sin errores (`npm run build`)
 - [x] Pruebas manuales documentadas (F15, 2026-07-07): tema oscuro en las 8 páginas (fondo `#0B1437` y logo oro verificados) · formulario: vacío bloqueado, correo inválido bloqueado con mensaje, texto largo con tildes/ñ/emoji/`<script>` sin romper layout, botón deshabilitado durante envío · 404 propia renderiza · consola del navegador sin errores ni warnings · responsive 375/800/1280
 - [x] Prueba real del formulario con la Access Key (2026-07-06: POST 200 + pantalla de éxito, con tildes/eñes en el mensaje)
-- [ ] Lighthouse / Core Web Vitals (F16)
+- [x] Lighthouse / Core Web Vitals (F16, 2026-07-07): inicio/contacto/servicios = A11y **100**, BP **100**, SEO **100**, Perf 96–97 (LCP 2,6 s simulado con throttling 4G — piso del hero con fuente display; CLS 0.001, TBT 50 ms)
 - ➖ Pruebas unitarias/integración — sin lógica de negocio propia en v1; reevaluar en v2
 
 ## Documentación

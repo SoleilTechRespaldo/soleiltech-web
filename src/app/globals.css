@@ -6,11 +6,12 @@
   --surface: #ffffff;
   --surface-muted: #F4E4D0;
   --border: #E8D5B8;
-  --primary: #C56A14;
+  --primary: #A85808; /* dorado-naranja de marca oscurecido para WCAG 4.5:1 (logo conserva #C56A14) */
   --primary-foreground: #ffffff;
   --secondary: #0E8FE0;
-  --secondary-foreground: #ffffff;
-  --muted-foreground: #8A6A45;
+  --secondary-foreground: #0B1437; /* azul noche sobre cian: 4.8:1 (blanco solo daba 3.5:1) */
+  --muted-foreground: #6F5335; /* oscurecido para WCAG 4.5:1 sobre surface-muted */
+  --badge-foreground: #7A3D08; /* texto de pills sobre tinte primary/15-25: >=4.5:1 */
 }
 
 .dark {
@@ -22,8 +23,9 @@
   --primary: #DDB24E;
   --primary-foreground: #0B1437;
   --secondary: #0E8FE0;
-  --secondary-foreground: #ffffff;
+  --secondary-foreground: #0B1437;
   --muted-foreground: #9FB0C8;
+  --badge-foreground: #DDB24E; /* oro sobre tinte oscuro */
 }
 
 @theme inline {
@@ -37,6 +39,7 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted-foreground: var(--muted-foreground);
+  --color-badge-foreground: var(--badge-foreground);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-calistoga);
 }
@@ -87,7 +90,7 @@ body > * {
 }
 
 .coming-soon-block {
-  opacity: 0.6;
+  /* atenuado vía borde punteado y colores muted — sin opacity, que rompía el contraste WCAG */
   cursor: not-allowed;
   border-style: dashed;
 }
