@@ -59,7 +59,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Nombre" htmlFor="name">
+        <Field label="Nombre y Apellido" htmlFor="name">
           <input
             id="name"
             name="name"
