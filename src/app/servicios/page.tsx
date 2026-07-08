@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Cctv,
+  Check,
+  Code2,
+  Globe,
+  Server,
+  Smartphone,
+  type LucideIcon,
+} from "lucide-react";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { ComingSoonBadge } from "@/components/coming-soon-badge";
 import { services } from "@/lib/site-config";
@@ -9,6 +18,14 @@ export const metadata: Metadata = {
   title: "Servicios",
   description:
     "Desarrollo de software, apps móviles y sitios web en Chile. Infraestructura técnica en terreno, futuramente.",
+};
+
+const serviceIcons: Record<string, LucideIcon> = {
+  "desarrollo-software": Code2,
+  "apps-moviles": Smartphone,
+  "sitios-y-tiendas-web": Globe,
+  "redes-y-camaras": Cctv,
+  "infraestructura-ti": Server,
 };
 
 export default function ServiciosPage() {
@@ -27,21 +44,34 @@ export default function ServiciosPage() {
       </div>
 
       <div className="mt-14 flex flex-col gap-16">
-        {services.map((service, i) => (
+        {services.map((service) => {
+          const Icon = serviceIcons[service.slug] ?? Code2;
+          return (
           <div
             key={service.slug}
             id={service.slug}
-            className={`scroll-mt-24 grid gap-8 border-t border-border pt-10 md:grid-cols-[auto_1fr] md:items-start ${
+            className={`scroll-mt-24 border-t border-border pt-10 ${
               service.comingSoon ? "coming-soon-block" : ""
             }`}
           >
-            <span className="text-sm font-semibold text-muted-foreground">
-              {String(i + 1).padStart(2, "0")}
-            </span>
             <div>
-              <div className="flex flex-wrap items-center gap-3">
-                <h2 className="font-display text-2xl">{service.title}</h2>
-                {service.comingSoon && <ComingSoonBadge service={service.title} />}
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
+                    service.comingSoon ? "bg-surface-muted" : "bg-primary/10"
+                  }`}
+                >
+                  <Icon
+                    className={`h-5 w-5 ${
+                      service.comingSoon ? "text-muted-foreground" : "text-primary"
+                    }`}
+                  />
+                </span>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h2 className="font-display text-2xl">{service.title}</h2>
+                  {service.comingSoon && <ComingSoonBadge service={service.title} />}
+                </div>
               </div>
               <p className="mt-3 max-w-2xl text-muted-foreground">
                 {service.description}
@@ -60,7 +90,8 @@ export default function ServiciosPage() {
               </ul>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
