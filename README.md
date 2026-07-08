@@ -114,3 +114,7 @@ exactos están en [CHECKLIST.md](CHECKLIST.md) (sección Infraestructura).
 2. Agrega la variable `NEXT_PUBLIC_WEB3FORMS_KEY`.
 3. Deploy — sin configuración adicional (sin base de datos ni backend propio
    en esta primera versión).
+
+El runbook completo del lanzamiento (dominio NIC Chile, DNS, monitoreo,
+plan de rollback y smoke tests) está en
+[docs/06-PRODUCCION.md](docs/06-PRODUCCION.md).

@@ -42,7 +42,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 | 14 | Integraciones externas | ✅ | 2026-07-06 — Web3Forms configurado y probado (envío real exitoso) |
 | 15 | Pruebas | ✅ | 2026-07-07 |
 | 16 | Optimización | ✅ | 2026-07-07 — Lighthouse: A11y 94→100, Perf 96-97, BP 100, SEO 100 |
-| 17 | Preparación para producción | ☐ | |
+| 17 | Preparación para producción | 🔄 | 2026-07-07 — headers ✅, runbook + rollback + monitoreo documentados (docs/06); resta activar dominio/HTTPS/monitor al desplegar |
 | 18 | Despliegue | ☐ | |
 | 19 | Mantenimiento | ☐ | inicia con el lanzamiento |
 
@@ -97,7 +97,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 - [x] `.env.example` documentado y versionado (sin valores reales)
 - [x] XSS: sin renderizado de contenido de usuario; React escapa por defecto
 - [x] Formulario declara uso de datos y enlaza a `/privacidad`
-- [ ] Headers de seguridad (revisar en F17; Vercel trae valores razonables)
+- [x] Headers de seguridad (2026-07-07: nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, HSTS — en `next.config.ts`, verificados sobre `next start`)
 - ➖ Hash de contraseñas, JWT/sesiones, roles, IDOR, SQLi — sin auth ni BD en v1
 - ➖ Rate limiting — lo gestiona Web3Forms en su endpoint
 
@@ -108,7 +108,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 - [ ] Deploy en Vercel (pendiente de autorización — puerta G5)
 - [ ] Dominio `soleiltech.cl` comprado (NIC Chile) y configurado
 - [ ] SSL/HTTPS (automático con Vercel al desplegar)
-- [ ] Monitoreo básico (uptime + errores) — definir en F17
+- [ ] Monitoreo básico (uptime + errores) — **plan definido** en [docs/06-PRODUCCION.md](docs/06-PRODUCCION.md) (UptimeRobot + logs de Vercel); se activa el día del deploy
 - ➖ Backups de BD — sin BD; el respaldo del código es Git (remoto pendiente)
 - ➖ Docker/CI — innecesario para este alcance
 
@@ -137,6 +137,7 @@ git checkout -b develop && git push -u origin develop
 - [x] docs/03-DISENO.md
 - [x] docs/04-ARQUITECTURA.md
 - ➖ docs/05-BASE-DE-DATOS.md — sin BD en v1
+- [x] docs/06-PRODUCCION.md — runbook de despliegue, monitoreo, rollback y smoke tests (2026-07-07)
 - [x] docs/DECISIONES.md al día
 - [ ] CHANGELOG.md (desde el primer release/deploy)
 - ➖ Documentación de API — sin API propia
