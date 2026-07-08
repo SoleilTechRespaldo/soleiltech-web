@@ -22,6 +22,8 @@ export function HeroIllustration() {
           <line x1="200" y1="55" x2="200" y2="35" />
           <line x1="150" y1="70" x2="137" y2="55" />
           <line x1="250" y1="70" x2="263" y2="55" />
+          <line x1="111" y1="118" x2="92" y2="111" />
+          <line x1="289" y1="118" x2="308" y2="111" />
         </g>
 
         <line x1="20" y1="150" x2="380" y2="150" stroke="#E8D5B8" strokeWidth="2" />
