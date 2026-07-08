@@ -4,6 +4,19 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-07 — Marca v3.1: palabra centrada con el sol + sol de 5 rayos en el hero
+
+- **Lockups**: por decisión del usuario, "SoleilTech" ya no comparte base con
+  el horizonte del sol; el texto quedó centrado verticalmente con el sol
+  (baseline y=104 → y=84; centro común y=64). Actualizados los 6 SVG y los
+  6 PNG (regenerados a 1940×440 transparentes con Chrome headless) en
+  `public/brand/` y en la carpeta maestra `SoleilTech-Brand-v3` (nota v3.1
+  en su LEEME). Iconos/favicons sin cambios (no llevan texto). Originales
+  intactos en `SoleilTech-Brand-v3.zip`.
+- **Ilustración del hero**: el sol pasó de 3 a 5 rayos — se agregaron los
+  dos laterales bajos con la geometría angular del logo (~20°), manteniendo
+  el estilo de trazo de la ilustración.
+
 ## 2026-07-07 — Reposicionamiento de textos (decisiones del usuario)
 
 - **De pymes a empresas de todos los tamaños**: se eliminó "pymes" de todo
