@@ -4,6 +4,27 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-07-07 — Build/dev con Webpack (Smart App Control bloquea Turbopack)
+
+**Contexto:** Windows Smart App Control (activo/enforzado en el PC de Nicolás,
+Windows 11 Pro build 26200) empezó a bloquear el binario nativo sin firmar de
+Next (`next-swc.win32-x64-msvc.node`), lo que rompe Turbopack — el compilador
+por defecto de `next build` y `next dev` en Next 16. Diagnóstico confirmado por
+registro: `HKLM\...\CI\Policy\VerifiedAndReputablePolicyState = 1`.
+
+**Decisión:** cambiar los scripts a `next dev --webpack` / `next build --webpack`
+(usan las bindings WASM, sí permitidas). El usuario **optó por NO desactivar
+Smart App Control** porque es una acción irreversible (una vez apagado no se
+puede reactivar sin reinstalar Windows) y reduce la seguridad de todo el equipo.
+
+**Implicancias:**
+- Builds/dev locales un poco más lentos; sin impacto funcional.
+- **No afecta producción**: Vercel compila en Linux con Turbopack normal. Si en
+  el futuro se corrige SAC o se compila en otra máquina, se puede volver a
+  Turbopack quitando `--webpack`.
+- El export estático del ZIP demo (`scripts/crear-entregable.ps1` → `npm run
+  build`) hereda el cambio automáticamente.
+
 ## 2026-07-07 — Fase 16: optimización medida con Lighthouse (A11y 94 → 100)
 
 Medición sobre build de producción (`next start`), Chrome headless.
