@@ -127,6 +127,7 @@ git checkout -b develop && git push -u origin develop
 - [x] Pruebas manuales documentadas (F15, 2026-07-07): tema oscuro en las 8 páginas (fondo `#0B1437` y logo oro verificados) · formulario: vacío bloqueado, correo inválido bloqueado con mensaje, texto largo con tildes/ñ/emoji/`<script>` sin romper layout, botón deshabilitado durante envío · 404 propia renderiza · consola del navegador sin errores ni warnings · responsive 375/800/1280
 - [x] Prueba real del formulario con la Access Key (2026-07-06: POST 200 + pantalla de éxito, con tildes/eñes en el mensaje)
 - [x] Lighthouse / Core Web Vitals (F16, 2026-07-07): inicio/contacto/servicios = A11y **100**, BP **100**, SEO **100**, Perf 96–97 (LCP 2,6 s simulado con throttling 4G — piso del hero con fuente display; CLS 0.001, TBT 50 ms)
+- [x] F16 re-verificada en contacto y servicios tras los cambios de iconos/label (2026-07-07): A11y/BP/SEO siguen en **100**; Perf ~88–96 con TBT variable (100–320 ms) por carga de la máquina al medir — sin regresión; único diagnóstico es JS sin usar del framework React/Next (no removible)
 - ➖ Pruebas unitarias/integración — sin lógica de negocio propia en v1; reevaluar en v2
 
 ## Documentación
