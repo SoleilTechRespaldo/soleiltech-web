@@ -104,3 +104,26 @@ export const services: Service[] = [
     comingSoon: true,
   },
 ];
+
+export type Project = {
+  slug: string;
+  name: string;
+  tagline: string;
+  short: string;
+  href: string;
+  statusLabel: string;
+};
+
+// Productos/desarrollos propios de SoleilTech. La tarjeta en /proyectos enlaza a
+// la página propia de cada uno (href).
+export const projects: Project[] = [
+  {
+    slug: "lumenstock",
+    name: "LumenStock",
+    tagline: "Inventario · Ventas",
+    short:
+      "Punto de venta e inventario para el comercio chileno: ventas, stock, boleta, cobro con QR de Mercado Pago y dashboards. Funciona sin internet.",
+    href: "/lumenstock",
+    statusLabel: "En desarrollo",
+  },
+];
