@@ -324,11 +324,35 @@ export default function LumenStockPage() {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Caja adicional +$5.000/mes · Instalación asistida remota opcional
-          (~$49.000, por una vez) · Las comisiones de Mercado Pago o de tu máquina
-          de tarjeta las cobra la pasarela al local, aparte de la suscripción.
-        </p>
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border bg-surface p-6">
+          <ul className="flex flex-col gap-4 text-sm sm:text-base">
+            <li className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">
+                  2 meses de prueba, gratis de verdad.
+                </strong>{" "}
+                Incluye la ayuda para dejarlo funcionando; no cobramos
+                instalación. Al terminar, tú decides si continúas y recién ahí
+                empiezas a pagar, desde el mes siguiente.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">Pagas solo tu plan.</strong>{" "}
+                Sin comisión por tus ventas y sin costos ocultos.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">¿Más de una caja?</strong>{" "}
+                Suma cajas adicionales por $5.000/mes cada una.
+              </span>
+            </li>
+          </ul>
+        </div>
       </section>
 
       {/* FAQ */}
