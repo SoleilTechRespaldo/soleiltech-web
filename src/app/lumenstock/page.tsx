@@ -355,14 +355,14 @@ export default function LumenStockPage() {
               </p>
             </div>
             <div className="sm:text-right">
-              <p className="flex items-baseline gap-1 sm:justify-end">
-                <span className="font-display text-5xl sm:text-6xl">
-                  $250.000
-                </span>
-                <span className="text-sm text-muted-foreground">IVA incl.</span>
+              <p className="font-display text-5xl leading-none sm:text-6xl">
+                $250.000
+              </p>
+              <p className="mt-2 text-sm font-semibold text-foreground">
+                Precio final a pagar · IVA incluido
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                pago único · Neto $210.084 + IVA (19%) $39.916
+                Pago único · ya incluye $39.916 de IVA (neto $210.084).
               </p>
             </div>
           </div>
