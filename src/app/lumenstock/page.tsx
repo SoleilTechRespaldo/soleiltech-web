@@ -419,10 +419,19 @@ export default function LumenStockPage() {
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
                 <strong className="font-semibold">
-                  Actualizaciones y soporte:
+                  Actualizaciones incluidas.
                 </strong>{" "}
-                el primer año va incluido; después, $60.000 al año si quieres
-                seguir recibiéndolos (opcional).
+                Las mejoras y correcciones del programa llegan sin costo, para
+                siempre.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">
+                  Soporte con asistencia (opcional):
+                </strong>{" "}
+                ayuda remota y dudas cuando las necesites, por $60.000 al año.
               </span>
             </li>
             <li className="flex items-start gap-3">
