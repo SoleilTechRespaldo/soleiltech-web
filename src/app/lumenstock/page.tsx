@@ -354,12 +354,17 @@ export default function LumenStockPage() {
                 Un pago y es tuyo, sin cobros mensuales.
               </p>
             </div>
-            <p className="flex items-baseline gap-1">
-              <span className="font-display text-4xl sm:text-5xl">$220.000</span>
-              <span className="text-sm text-muted-foreground">
-                pago único · IVA incl.
-              </span>
-            </p>
+            <div className="sm:text-right">
+              <p className="flex items-baseline gap-1 sm:justify-end">
+                <span className="font-display text-4xl sm:text-5xl">
+                  $220.000
+                </span>
+                <span className="text-sm text-muted-foreground">+ IVA</span>
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                pago único · con IVA: $261.800
+              </p>
+            </div>
           </div>
           <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
             {[
@@ -405,7 +410,8 @@ export default function LumenStockPage() {
                 <strong className="font-semibold">
                   Instalación y capacitación (opcional):
                 </strong>{" "}
-                te lo dejamos andando por videollamada por $50.000.
+                la dejamos andando en tu computador de forma remota, sin que
+                tengas que moverte, por $50.000 + IVA.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -414,8 +420,8 @@ export default function LumenStockPage() {
                 <strong className="font-semibold">
                   Actualizaciones y soporte:
                 </strong>{" "}
-                el primer año va incluido; después, $60.000 al año si quieres
-                seguir recibiéndolos (opcional).
+                el primer año va incluido; después, $60.000 + IVA al año si
+                quieres seguir recibiéndolos (opcional).
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -429,9 +435,9 @@ export default function LumenStockPage() {
             </li>
           </ul>
           <p className="mt-5 text-xs text-muted-foreground">
-            Todos los precios incluyen IVA (19%). La boleta que emite el programa
-            es un comprobante interno; la boleta electrónica del SII se emite por
-            tu medio habitual.
+            Valores netos; el IVA (19%) se agrega en la factura. La boleta que
+            emite el programa es un comprobante interno; la boleta electrónica del
+            SII se emite por tu medio habitual.
           </p>
         </div>
       </section>
