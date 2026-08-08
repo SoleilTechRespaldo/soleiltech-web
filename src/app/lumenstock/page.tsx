@@ -8,7 +8,6 @@ import {
   Check,
   Clock,
   DatabaseBackup,
-  Download,
   QrCode,
   Receipt,
   ShieldAlert,
@@ -148,7 +147,7 @@ export default function LumenStockPage() {
           <div className="mt-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <span className="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full border border-dashed border-border bg-surface-muted px-6 py-3 text-sm font-semibold text-muted-foreground">
-                <Download className="h-4 w-4" /> Descargar para Windows
+                <ShoppingCart className="h-4 w-4" /> Comprar para Windows
               </span>
               <Link
                 href="/contacto"
@@ -158,7 +157,7 @@ export default function LumenStockPage() {
               </Link>
             </div>
             <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-badge-foreground">
-              <Clock className="h-3 w-3" /> Descarga disponible pronto
+              <Clock className="h-3 w-3" /> Compra disponible pronto
             </span>
           </div>
         </div>
