@@ -105,8 +105,8 @@ const faqs = [
     a: "En computadores con Windows 10 y 11.",
   },
   {
-    q: "¿Puedo tener varias cajas?",
-    a: "Sí. Varias cajas pueden vender a la vez sobre la misma base, cada una con su propia numeración de boletas.",
+    q: "¿Y si tengo varias cajas o sucursales?",
+    a: "La licencia es por computador. El programa maneja varias cajas, cada una con su propia numeración de boletas. Para una segunda caja física o una sucursal, cada equipo funciona de forma independiente (con sus propios datos), y la licencia adicional queda con descuento: $180.000 (IVA incluido). Verlas conectadas y consolidadas en tiempo real (multi-sucursal) llegará con la versión en la nube, más adelante.",
   },
 ];
 
@@ -411,7 +411,8 @@ export default function LumenStockPage() {
                   Instalación y capacitación (opcional):
                 </strong>{" "}
                 la dejamos andando en tu computador de forma remota, sin que
-                tengas que moverte, por $50.000.
+                tengas que moverte, por $50.000 (precio final con instalación:
+                $300.000).
               </span>
             </li>
             <li className="flex items-start gap-3">
