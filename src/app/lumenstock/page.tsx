@@ -356,13 +356,13 @@ export default function LumenStockPage() {
             </div>
             <div className="sm:text-right">
               <p className="flex items-baseline gap-1 sm:justify-end">
-                <span className="font-display text-4xl sm:text-5xl">
-                  $220.000
+                <span className="font-display text-5xl sm:text-6xl">
+                  $250.000
                 </span>
-                <span className="text-sm text-muted-foreground">+ IVA</span>
+                <span className="text-sm text-muted-foreground">IVA incl.</span>
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                pago único · con IVA: $261.800
+                pago único · Neto $210.084 + IVA (19%) $39.916
               </p>
             </div>
           </div>
@@ -411,7 +411,7 @@ export default function LumenStockPage() {
                   Instalación y capacitación (opcional):
                 </strong>{" "}
                 la dejamos andando en tu computador de forma remota, sin que
-                tengas que moverte, por $50.000 + IVA.
+                tengas que moverte, por $50.000.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -420,8 +420,8 @@ export default function LumenStockPage() {
                 <strong className="font-semibold">
                   Actualizaciones y soporte:
                 </strong>{" "}
-                el primer año va incluido; después, $60.000 + IVA al año si
-                quieres seguir recibiéndolos (opcional).
+                el primer año va incluido; después, $60.000 al año si quieres
+                seguir recibiéndolos (opcional).
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -435,9 +435,9 @@ export default function LumenStockPage() {
             </li>
           </ul>
           <p className="mt-5 text-xs text-muted-foreground">
-            Valores netos; el IVA (19%) se agrega en la factura. La boleta que
-            emite el programa es un comprobante interno; la boleta electrónica del
-            SII se emite por tu medio habitual.
+            Todos los precios incluyen IVA (19%). La boleta que emite el programa
+            es un comprobante interno; la boleta electrónica del SII se emite por
+            tu medio habitual.
           </p>
         </div>
       </section>
