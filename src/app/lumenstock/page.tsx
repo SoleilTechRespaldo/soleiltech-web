@@ -444,9 +444,10 @@ export default function LumenStockPage() {
             </li>
           </ul>
           <p className="mt-5 text-xs text-muted-foreground">
-            Todos los precios incluyen IVA (19%). La boleta que emite el programa
-            es un comprobante interno; la boleta electrónica del SII se emite por
-            tu medio habitual.
+            Todos los precios incluyen IVA (19%); emitimos factura por tu compra.
+            La boleta que emite el programa (para las ventas de tu local) es un
+            comprobante interno; la boleta electrónica del SII la emites por tu
+            medio habitual.
           </p>
         </div>
       </section>

@@ -25,7 +25,7 @@ const steps = [
   },
   {
     title: "Te enviamos el medio de pago",
-    text: "Un link de pago de Mercado Pago o los datos para transferencia, junto con tu boleta o factura.",
+    text: "Un link de pago o los datos para transferencia, junto con tu factura.",
   },
   {
     title: "Pagas",
@@ -157,8 +157,9 @@ export default function ComprarLumenStockPage() {
             <li className="flex items-start gap-2">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
-                <strong className="font-semibold">Boleta o factura con IVA</strong>{" "}
-                por tu compra. Todos los precios incluyen IVA (19%).
+                <strong className="font-semibold">Factura con IVA</strong> por tu
+                compra (la necesitas para recuperar el IVA). Todos los precios
+                incluyen IVA (19%).
               </span>
             </li>
           </ul>
