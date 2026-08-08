@@ -355,8 +355,10 @@ export default function LumenStockPage() {
               </p>
             </div>
             <p className="flex items-baseline gap-1">
-              <span className="font-display text-4xl sm:text-5xl">$199.000</span>
-              <span className="text-sm text-muted-foreground">pago único</span>
+              <span className="font-display text-4xl sm:text-5xl">$220.000</span>
+              <span className="text-sm text-muted-foreground">
+                pago único · IVA incl.
+              </span>
             </p>
           </div>
           <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
@@ -412,7 +414,7 @@ export default function LumenStockPage() {
                 <strong className="font-semibold">
                   Actualizaciones y soporte:
                 </strong>{" "}
-                el primer año va incluido; después, ~$39.000 al año si quieres
+                el primer año va incluido; después, $60.000 al año si quieres
                 seguir recibiéndolos (opcional).
               </span>
             </li>
@@ -427,8 +429,9 @@ export default function LumenStockPage() {
             </li>
           </ul>
           <p className="mt-5 text-xs text-muted-foreground">
-            La boleta que emite es un comprobante interno; la boleta electrónica
-            del SII se emite por tu medio habitual.
+            Todos los precios incluyen IVA (19%). La boleta que emite el programa
+            es un comprobante interno; la boleta electrónica del SII se emite por
+            tu medio habitual.
           </p>
         </div>
       </section>
