@@ -11,20 +11,23 @@ import {
   Download,
   QrCode,
   Receipt,
+  ShieldAlert,
   ShieldCheck,
   ShoppingCart,
+  Store,
   Tags,
   Truck,
   Users,
+  Wallet,
   WifiOff,
 } from "lucide-react";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { LumenStockMark } from "@/components/lumenstock-logo";
 
 export const metadata: Metadata = {
-  title: "LumenStock — Inventario y ventas",
+  title: "LumenStock — Inventario y ventas (pago único)",
   description:
-    "LumenStock: punto de venta e inventario para el comercio chileno. Ventas, stock, boleta, cobro con QR de Mercado Pago y dashboards. Funciona sin internet.",
+    "LumenStock: punto de venta e inventario para el comercio chileno — minimarket, botillería, almacén, ferretería y más. Ventas, stock, boleta, cobro con QR de Mercado Pago y estadísticas. Pago único, funciona sin internet.",
 };
 
 const features = [
@@ -70,19 +73,32 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: "Dashboards",
-    text: "Ventas en el tiempo, medios de pago, productos más vendidos y tus propios gráficos.",
+    title: "Estadísticas",
+    text: "Ventas en el tiempo, por vendedor, medios de pago, productos más vendidos y tus propios gráficos, por fecha o rango.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "Control de mermas",
+    text: "Detecta pérdidas, roturas y anulaciones atípicas. Clave donde se rompe o se pierde mercadería (ej. botillería).",
   },
 ];
 
 const faqs = [
   {
+    q: "¿Es pago único o mensualidad?",
+    a: "Pago único: lo compras una vez y el programa es tuyo, sin cobros mensuales ni comisiones por tus ventas.",
+  },
+  {
+    q: "¿Sirve para mi tipo de local?",
+    a: "Sí: minimarket, botillería, almacén, ferretería, pet shop, librería, bazar y cualquier local que venda productos con precio y código.",
+  },
+  {
     q: "¿Necesito internet para usarlo?",
     a: "No para vender ni para el inventario: LumenStock funciona sin conexión. Solo el cobro con QR de Mercado Pago requiere internet.",
   },
   {
-    q: "¿Se pierden mis datos si cierro el programa?",
-    a: "No. Todo se guarda en tu computador y, además, se respalda automáticamente una vez al día.",
+    q: "¿Cómo respaldo mis datos?",
+    a: "Todo se guarda en tu computador y se respalda solo cada día. Además, tú activas un respaldo por correo al cerrar la caja (diario, semanal o mensual): el programa te prepara un Excel con el resumen y una copia de tu base para que te la envíes a tu correo y quede fuera del equipo. Tú administras tus respaldos.",
   },
   {
     q: "¿En qué equipos funciona?",
@@ -116,9 +132,17 @@ export default function LumenStockPage() {
             </div>
           </div>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            El punto de venta e inventario para el comercio chileno: vende,
+            El punto de venta e inventario para el comercio chileno —{" "}
+            minimarkets, botillerías, almacenes, ferreterías y más: vende,
             controla tu stock, cobra con QR de Mercado Pago e imprime la boleta —
             todo desde un mismo lugar y <strong>sin depender de internet</strong>.
+          </p>
+          <p className="mt-4 max-w-2xl text-base sm:text-lg">
+            <strong className="text-foreground">Pago único:</strong>{" "}
+            <span className="text-muted-foreground">
+              lo compras una vez y es tuyo. Sin mensualidad ni comisiones por tus
+              ventas.
+            </span>
           </p>
 
           <div className="mt-8">
@@ -155,9 +179,9 @@ export default function LumenStockPage() {
               text: "Ventas, inventario, caja, proveedores, usuarios y reportes en un solo programa.",
             },
             {
-              icon: ShieldCheck,
-              title: "Hecho para Chile",
-              text: "Pensado para el minimarket y el comercio local, con cobro por QR y boleta de 80 mm.",
+              icon: Wallet,
+              title: "Pago único",
+              text: "Lo compras una vez y es tuyo. Sin mensualidad ni comisiones por tus ventas.",
             },
           ].map((item) => (
             <div
@@ -201,6 +225,58 @@ export default function LumenStockPage() {
         </div>
       </section>
 
+      {/* Para qué locales sirve */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <div className="flex items-center gap-3">
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+            <Store className="h-5 w-5 text-primary" />
+          </span>
+          <h2 className="font-display text-2xl sm:text-3xl">
+            ¿Para qué locales sirve?
+          </h2>
+        </div>
+        <p className="mt-4 max-w-2xl text-muted-foreground">
+          Para cualquier local que venda productos con precio y código. Algunos
+          ejemplos:
+        </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              title: "Minimarket y almacén",
+              text: "Ventas rápidas con escáner, control de stock y alertas cuando algo baja del mínimo. El día a día bajo control.",
+            },
+            {
+              title: "Botillería",
+              text: "Arqueo de caja diario y control de mermas por roturas — donde entra harta plata en efectivo y se quiebra mercadería.",
+            },
+            {
+              title: "Ferretería y pañolería",
+              text: "Catálogo grande con códigos, precios y categorías, con stock mínimo para reponer a tiempo.",
+            },
+            {
+              title: "Pet shop",
+              text: "Inventario por categorías (alimento, accesorios), alertas de stock y registro de proveedores.",
+            },
+            {
+              title: "Librería y bazar",
+              text: "Muchos productos chicos con código de barras, ordenados por categoría y fáciles de cobrar.",
+            },
+            {
+              title: "Comida rápida simple",
+              text: "Cobra ítems de precio fijo (completos, empanadas, bebidas) como productos, con boleta y cierre de caja.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-border bg-surface p-6"
+            >
+              <h3 className="text-base font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Capturas (placeholder) */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="font-display text-2xl sm:text-3xl">Cómo se ve</h2>
@@ -238,11 +314,14 @@ export default function LumenStockPage() {
           </div>
           <p className="mt-4 text-muted-foreground">
             LumenStock guarda la información de tu local en tu propio computador,
-            no en un servidor externo. Además, cuida esa información sola:
+            no en un servidor externo. Tú tienes el control de tus datos y de tus
+            respaldos:
           </p>
           <ul className="mt-5 flex flex-col gap-3">
             {[
-              "Respaldo automático diario en tu equipo.",
+              "Respaldo diario automático en tu propio equipo.",
+              "Respaldo por correo al cerrar la caja: tú lo activas (diario, semanal o mensual) y el programa te prepara un Excel con el resumen más una copia de tu base, para que te la envíes a tu correo y quede fuera del equipo.",
+              "Tú administras tus respaldos: como los datos viven en tu computador, cada local guarda sus copias donde prefiera.",
               "Contraseñas de los usuarios siempre cifradas.",
               "Permisos por usuario: cada vendedor ve solo lo que le corresponde.",
             ].map((point) => (
@@ -255,103 +334,102 @@ export default function LumenStockPage() {
         </div>
       </section>
 
-      {/* Precios */}
+      {/* Precio */}
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
         <div className="text-center">
-          <h2 className="font-display text-2xl sm:text-3xl">Planes y precios</h2>
+          <h2 className="font-display text-2xl sm:text-3xl">Precio</h2>
           <p className="mt-2 text-muted-foreground">
-            Suscripción mensual, sin cuota de instalación.{" "}
-            <strong className="text-foreground">
-              Los 2 primeros meses son gratis.
-            </strong>
+            Un solo pago. El programa es tuyo —{" "}
+            <strong className="text-foreground">sin mensualidad</strong>.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="flex flex-col rounded-2xl border border-border bg-surface p-8">
-            <h3 className="text-lg font-semibold">Básico</h3>
-            <p className="mt-2 flex items-baseline gap-1">
-              <span className="font-display text-4xl">$14.990</span>
-              <span className="text-sm text-muted-foreground">/mes</span>
+        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border-2 border-primary bg-surface p-8">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <h3 className="text-lg font-semibold">
+                Licencia única · Todo incluido
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Un pago y es tuyo, sin cobros mensuales.
+              </p>
+            </div>
+            <p className="flex items-baseline gap-1">
+              <span className="font-display text-4xl sm:text-5xl">$199.000</span>
+              <span className="text-sm text-muted-foreground">pago único</span>
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Para un local con una caja.
-            </p>
-            <ul className="mt-6 flex flex-col gap-2.5">
-              {[
-                "1 caja",
-                "Punto de venta con escáner",
-                "Inventario y categorías",
-                "Boleta e impresión",
-                "Funciona sin internet",
-                "Dashboards estándar",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-
-          <div className="relative flex flex-col rounded-2xl border-2 border-primary bg-surface p-8">
-            <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-              Recomendado
-            </span>
-            <h3 className="text-lg font-semibold">Full</h3>
-            <p className="mt-2 flex items-baseline gap-1">
-              <span className="font-display text-4xl">$24.990</span>
-              <span className="text-sm text-muted-foreground">/mes</span>
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Todo incluido, para crecer.
-            </p>
-            <ul className="mt-6 flex flex-col gap-2.5">
-              {[
-                "Hasta 3 cajas",
-                "Todo lo del plan Básico",
-                "Control de mermas",
-                "Dashboards personalizables",
-                "Cierre de caja avanzado",
-                "Soporte prioritario",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+            {[
+              "Punto de venta con escáner",
+              "Inventario, categorías e importación",
+              "Boleta e impresión",
+              "Cierre de caja avanzado",
+              "Proveedores y compras",
+              "Usuarios y permisos",
+              "Estadísticas y gráficos propios",
+              "Control de mermas",
+              "Cobro con QR de Mercado Pago",
+              "Funciona sin internet",
+            ].map((f) => (
+              <li key={f} className="flex items-start gap-2 text-sm">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border bg-surface p-6">
           <ul className="flex flex-col gap-4 text-sm sm:text-base">
             <li className="flex items-start gap-3">
+              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">30 días de garantía.</strong>{" "}
+                Pruébalo un mes; si no te sirve, te devolvemos tu dinero.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>
+                <strong className="font-semibold">Se paga solo.</strong> Otros
+                sistemas cobran ~$180.000 a $300.000 al año, para siempre. Acá
+                pagas una sola vez.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
                 <strong className="font-semibold">
-                  2 meses de prueba, gratis de verdad.
+                  Instalación y capacitación (opcional):
                 </strong>{" "}
-                Incluye la ayuda para dejarlo funcionando; no cobramos
-                instalación. Al terminar, tú decides si continúas y recién ahí
-                empiezas a pagar, desde el mes siguiente.
+                te lo dejamos andando por videollamada por $50.000.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
-                <strong className="font-semibold">Pagas solo tu plan.</strong>{" "}
-                Sin comisión por tus ventas y sin costos ocultos.
+                <strong className="font-semibold">
+                  Actualizaciones y soporte:
+                </strong>{" "}
+                el primer año va incluido; después, ~$39.000 al año si quieres
+                seguir recibiéndolos (opcional).
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
-                <strong className="font-semibold">¿Más de una caja?</strong>{" "}
-                Suma cajas adicionales por $5.000/mes cada una.
+                <strong className="font-semibold">
+                  Sin comisiones ni costos ocultos.
+                </strong>{" "}
+                No cobramos por tus ventas.
               </span>
             </li>
           </ul>
+          <p className="mt-5 text-xs text-muted-foreground">
+            La boleta que emite es un comprobante interno; la boleta electrónica
+            del SII se emite por tu medio habitual.
+          </p>
         </div>
       </section>
 
