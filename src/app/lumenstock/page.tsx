@@ -284,7 +284,7 @@ export default function LumenStockPage() {
           Una interfaz clara y directa. Capturas reales próximamente.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          {["Caja / Punto de venta", "Inventario", "Dashboard"].map((label) => (
+          {["Caja / Punto de venta", "Inventario", "Estadísticas"].map((label) => (
             <div
               key={label}
               className="flex aspect-[4/3] flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border bg-surface-muted p-6 text-center"
