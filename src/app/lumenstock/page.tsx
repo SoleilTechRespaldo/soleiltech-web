@@ -355,13 +355,13 @@ export default function LumenStockPage() {
             </div>
             <div className="sm:text-right">
               <p className="font-display text-5xl leading-none sm:text-6xl">
-                $250.000
+                $320.000
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Precio final a pagar · IVA incluido
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                Pago único · ya incluye $39.916 de IVA (neto $210.084).
+                Pago único · ya incluye $51.092 de IVA (neto $268.908).
               </p>
             </div>
           </div>
@@ -411,26 +411,27 @@ export default function LumenStockPage() {
                 </strong>{" "}
                 la dejamos andando en tu computador de forma remota, sin que
                 tengas que moverte, por $50.000 (precio final con instalación:
-                $300.000).
+                $370.000).
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
                 <strong className="font-semibold">
-                  Actualizaciones incluidas.
+                  Correcciones y cambios por ley, incluidos.
                 </strong>{" "}
-                Las mejoras y correcciones del programa llegan sin costo, para
-                siempre.
+                Los arreglos y lo que exija la normativa (por ejemplo, del SII)
+                llegan sin costo.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
               <span>
                 <strong className="font-semibold">
-                  Soporte con asistencia (opcional):
+                  Mantención (opcional):
                 </strong>{" "}
-                ayuda remota y dudas cuando las necesites, por $60.000 al año.
+                nuevas funciones y soporte con asistencia cuando lo necesites,
+                por $72.000 al año.
               </span>
             </li>
             <li className="flex items-start gap-3">

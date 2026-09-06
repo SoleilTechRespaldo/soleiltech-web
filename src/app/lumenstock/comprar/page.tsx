@@ -92,7 +92,7 @@ export default function ComprarLumenStockPage() {
             </div>
             <div className="sm:text-right">
               <p className="font-display text-5xl leading-none sm:text-6xl">
-                $250.000
+                $320.000
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
                 Precio final a pagar · IVA incluido
@@ -151,7 +151,7 @@ export default function ComprarLumenStockPage() {
                   Instalación remota (opcional):
                 </strong>{" "}
                 te lo dejamos andando en tu computador por $50.000 (precio final
-                con instalación: $300.000).
+                con instalación: $370.000).
               </span>
             </li>
             <li className="flex items-start gap-2">
