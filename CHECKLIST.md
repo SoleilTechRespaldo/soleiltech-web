@@ -6,7 +6,7 @@
 - **Proyecto:** SoleilTech — sitio web de ventas
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
-- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-07-07
+- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-09-27
 - **Fase actual:** 17 — Preparación para producción
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
@@ -21,6 +21,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
 7. ✅ ~~Decidir destino de las páginas `/preview`~~ (2026-07-06: mostradas al usuario, no le gustaron → **eliminadas**; recuperables desde el historial de Git).
 8. ✅ ~~Confirmar número de WhatsApp~~ (2026-07-06: `+56 9 6508 5810` es el personal y es correcto **por ahora**; comprará un chip de empresa → cambiar en `site-config.ts` cuando llegue).
+9. ☐ **Al tener el RUT de la empresa constituida:** mostrar la razón social `Servicios Informáticos SoleilTech SpA` + RUT (+ comuna Villa Alemana) en el **footer** y en las páginas **/terminos** y **/privacidad**. La marca visible sigue siendo "SoleilTech" (sin SpA). Datos en `site-config.ts`.
 
 ## Estado de fases
 
