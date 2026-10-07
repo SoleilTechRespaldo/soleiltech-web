@@ -6,7 +6,7 @@
 - **Proyecto:** SoleilTech — sitio web de ventas
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
-- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-09-27
+- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-10-07
 - **Fase actual:** 17 — Preparación para producción
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
@@ -16,7 +16,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 1. ✅ ~~Crear cuenta Web3Forms y configurar Access Key~~ (2026-07-06, en `.env.local`; ligada a `nicolasjerez.soleiltech@gmail.com`)
 2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK + **correo confirmado por el usuario** — llega a la pestaña Promociones; creó la etiqueta "SoleilTech Solicitudes" para marcarlas al tiro).
 3. ✅ ~~Pruebas de la Fase 15~~ (2026-07-07: modo oscuro verificado en las 8 páginas, formulario con datos imperfectos bloqueado correctamente, 404 propia OK, consola limpia, lint limpio, responsive verificado en 375/800/1280).
-4. ☐ **Usuario:** comprar dominio `soleiltech.cl` en https://www.nic.cl (~$10.000 CLP/año) — lo hará el **próximo mes** (agosto 2026, con el pago).
+4. ✅ ~~Comprar dominio `soleiltech.cl` en NIC Chile~~ (2026-10-07). Titular = Nicolás persona natural (la SpA aún no está constituida; se puede pasar a la empresa con cambio de titular después). Cuenta NIC bajo el Gmail del negocio. **DNS aún sin configurar** (irá en Cloudflare — NIC no ofrece DNS primario). `siteConfig.url` ya apunta a `https://soleiltech.cl`.
 5. ☐ Repo privado en GitHub + Vercel — **en cuenta GitHub de la empresa**, cuando estén: decisión de previews + dominio comprado + correo corporativo Gmail.
 6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
 7. ✅ ~~Decidir destino de las páginas `/preview`~~ (2026-07-06: mostradas al usuario, no le gustaron → **eliminadas**; recuperables desde el historial de Git).
