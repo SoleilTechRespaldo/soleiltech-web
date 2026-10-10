@@ -6,7 +6,7 @@
 - **Proyecto:** SoleilTech — sitio web de ventas
 - **Descripción:** Sitio corporativo para captar clientes de software a medida, apps móviles y sitios web; servicios presenciales (redes, cámaras, infraestructura TI) anunciados como "próximamente".
 - **Stack:** Next.js 16.2.10 + React 19.2.4 + TypeScript 5.9.3 + Tailwind 4.3.2 (detalle en [docs/02-STACK.md](docs/02-STACK.md))
-- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-10-07
+- **Inicio:** 2026-07-05 (adopción de metodología sobre sitio ya construido) · **Última actualización:** 2026-10-10
 - **Fase actual:** 17 — Preparación para producción
 
 Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
@@ -17,7 +17,7 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 2. ✅ ~~Probar el formulario de punta a punta~~ (2026-07-06: envío real OK + **correo confirmado por el usuario** — llega a la pestaña Promociones; creó la etiqueta "SoleilTech Solicitudes" para marcarlas al tiro).
 3. ✅ ~~Pruebas de la Fase 15~~ (2026-07-07: modo oscuro verificado en las 8 páginas, formulario con datos imperfectos bloqueado correctamente, 404 propia OK, consola limpia, lint limpio, responsive verificado en 375/800/1280).
 4. ✅ ~~Comprar dominio `soleiltech.cl` en NIC Chile~~ (2026-10-07). Titular = Nicolás persona natural (la SpA aún no está constituida; se puede pasar a la empresa con cambio de titular después). Cuenta NIC bajo el Gmail del negocio. **DNS aún sin configurar** (irá en Cloudflare — NIC no ofrece DNS primario). `siteConfig.url` ya apunta a `https://soleiltech.cl`.
-5. ☐ Repo privado en GitHub + Vercel — **en cuenta GitHub de la empresa**, cuando estén: decisión de previews + dominio comprado + correo corporativo Gmail.
+5. ☐ Repo privado en GitHub + **Cloudflare Pages** (hosting decidido — [ADR 2026-10-10](docs/DECISIONES.md)) — en cuenta de la empresa, cuando estén el correo corporativo y la cuenta Cloudflare. Dominio ya comprado ✅.
 6. ☐ Reemplazar estado vacío de `/proyectos` — usuario está perfeccionando los proyectos antes de publicarlos.
 7. ✅ ~~Decidir destino de las páginas `/preview`~~ (2026-07-06: mostradas al usuario, no le gustaron → **eliminadas**; recuperables desde el historial de Git).
 8. ✅ ~~Confirmar número de WhatsApp~~ (2026-07-06: `+56 9 6508 5810` es el personal y es correcto **por ahora**; comprará un chip de empresa → cambiar en `site-config.ts` cuando llegue).
@@ -98,7 +98,8 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 - [x] `.env.example` documentado y versionado (sin valores reales)
 - [x] XSS: sin renderizado de contenido de usuario; React escapa por defecto
 - [x] Formulario declara uso de datos y enlaza a `/privacidad`
-- [x] Headers de seguridad (2026-07-07: nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, HSTS — en `next.config.ts`, verificados sobre `next start`)
+- [x] Headers de seguridad + **CSP** (2026-10-10: CSP sin nonces + nosniff, X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, HSTS — en `public/_headers` (Cloudflare) y `next.config.ts` (local); verificados sobre `next start`, sin violaciones de CSP en consola)
+- [x] Dependencias al día (2026-10-10): `npm audit` **producción 0 vulnerabilidades** (Next 16.2.10→16.4.0); quedan 5 high **solo dev** (chain de eslint: braces/micromatch/fast-glob), aceptadas
 - ➖ Hash de contraseñas, JWT/sesiones, roles, IDOR, SQLi — sin auth ni BD en v1
 - ➖ Rate limiting — lo gestiona Web3Forms en su endpoint
 
@@ -106,10 +107,10 @@ Estados: ☐ pendiente · 🔄 en desarrollo · ✅ terminado · ➖ no aplica
 
 - [x] Variables de entorno (`.env.example` documentado)
 - [ ] Repositorio remoto privado en GitHub (comandos listos abajo)
-- [ ] Deploy en Vercel (pendiente de autorización — puerta G5)
+- [ ] Deploy en **Cloudflare Pages** (export estático; pendiente de autorización — puerta G5)
 - [ ] Dominio `soleiltech.cl` comprado (NIC Chile) y configurado
-- [ ] SSL/HTTPS (automático con Vercel al desplegar)
-- [ ] Monitoreo básico (uptime + errores) — **plan definido** en [docs/06-PRODUCCION.md](docs/06-PRODUCCION.md) (UptimeRobot + logs de Vercel); se activa el día del deploy
+- [ ] SSL/HTTPS (automático con Cloudflare al validar el dominio)
+- [ ] Monitoreo básico (uptime + errores) — **plan definido** en [docs/06-PRODUCCION.md](docs/06-PRODUCCION.md) (UptimeRobot + Cloudflare Web Analytics + logs de Pages); se activa el día del deploy
 - ➖ Backups de BD — sin BD; el respaldo del código es Git (remoto pendiente)
 - ➖ Docker/CI — innecesario para este alcance
 
@@ -161,7 +162,7 @@ git checkout -b develop && git push -u origin develop
 | Alta | Portafolio real en `/proyectos` | ☐ |
 | Alta | Correo corporativo con dominio propio | ☐ |
 | Alta | WhatsApp de empresa (chip nuevo) → actualizar `site-config.ts` | ☐ |
-| Media | Analytics (Vercel Analytics o similar) | ☐ |
+| Media | Analytics (Cloudflare Web Analytics, sin cookies) | ☐ |
 | Media | Cotizador en línea | ☐ |
 | Media | Correo transaccional al cliente (Resend/Postmark) | ☐ |
 | Baja | Blog / contenidos SEO | ☐ |

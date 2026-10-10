@@ -50,7 +50,7 @@ Abre [http://localhost:3000](http://localhost:3000).
 | `NEXT_PUBLIC_WEB3FORMS_KEY` | Access Key de [Web3Forms](https://web3forms.com) para el formulario de `/contacto`. Sin ella, el formulario degrada a un aviso con enlace directo a WhatsApp. |
 
 Local: copia `.env.example` a `.env.local` y completa el valor. En el hosting
-(Vercel): Project Settings → Environment Variables.
+(Cloudflare Pages): Settings → Variables and Secrets.
 
 ### Formulario de contacto (obligatorio antes de lanzar)
 
@@ -105,15 +105,15 @@ Guía de uso en [docs/03-DISENO.md](docs/03-DISENO.md).
 ## Control de versiones
 
 Repositorio Git local (rama `main`). El repositorio remoto privado en GitHub
-y el deploy en Vercel están **pendientes de autorización** — los comandos
-exactos están en [CHECKLIST.md](CHECKLIST.md) (sección Infraestructura).
+y el deploy en **Cloudflare Pages** están **pendientes de autorización** (G5) —
+el runbook está en [docs/06-PRODUCCION.md](docs/06-PRODUCCION.md).
 
-## Deploy en Vercel (cuando se autorice — puerta G5)
+## Deploy en Cloudflare Pages (cuando se autorice — puerta G5)
 
-1. Conecta el repositorio a un proyecto de Vercel.
-2. Agrega la variable `NEXT_PUBLIC_WEB3FORMS_KEY`.
-3. Deploy — sin configuración adicional (sin base de datos ni backend propio
-   en esta primera versión).
+1. Conecta el repositorio a un proyecto de Cloudflare Pages.
+2. Build command `BUILD_STATIC=true npm run build`, output directory `out`.
+3. Agrega la variable `NEXT_PUBLIC_WEB3FORMS_KEY`.
+4. Apunta `soleiltech.cl` (DNS en Cloudflare); HTTPS automático.
 
 El runbook completo del lanzamiento (dominio NIC Chile, DNS, monitoreo,
 plan de rollback y smoke tests) está en

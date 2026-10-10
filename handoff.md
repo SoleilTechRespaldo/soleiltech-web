@@ -12,6 +12,23 @@
 
 ## 2. Estado por sesión (la más reciente arriba)
 
+### Sesión 2026-10-10 — Auditoría + actualización al estándar de la skill (Cloudflare, CSP, deps) · IA: Claude (Clau)
+- **Estado al terminar:** auditoría completa (seguridad / diseño / código) contra la
+  skill actualizada. **Aplicado y verificado:** (1) **Next 16.2.10→16.4.0** → `npm audit`
+  de **producción = 0 vulnerabilidades** (quedan 5 high **solo dev**, chain de eslint);
+  (2) **CSP** sin nonces añadida en `public/_headers` (Cloudflare) + `next.config.ts`
+  (local), probada sobre `next start` sin violaciones en consola y sin romper el render;
+  (3) **hosting = Cloudflare Pages (export estático)**, runbook `06-PRODUCCION.md` migrado
+  de Vercel. Lint + build (normal y `BUILD_STATIC` export con `out/_headers`) en verde.
+  **No desplegado** (G5 pendiente).
+- **Decisiones (ADR en `docs/DECISIONES.md`, 2026-10-10):** Cloudflare Pages estático; un
+  solo dominio (`soleiltech.cl` + subrutas, p. ej. `/lumenstock`); dependencias al día.
+- **Cómo desplegar:** `docs/06-PRODUCCION.md` (build `BUILD_STATIC=true npm run build`,
+  output `out`, Cloudflare Pages). Verificar deploy real con `curl -I` (headers + CSP).
+- **Para la otra IA (Cody):** revisión cruzada de la **CSP** (que no rompa ninguna página
+  ni el POST del formulario a Web3Forms) y del runbook Cloudflare. Tarea del usuario: crear
+  cuenta Cloudflare con **2FA** + repo GitHub de la empresa.
+
 ### Sesión 2026-10-09 — Dominio comprado + estado del sitio · IA: Claude (Clau)
 - **Estado al terminar:** sitio **terminado y optimizado** (Fases 1–16 ✅; Fase 17 con
   headers de seguridad + runbook listos; falta desplegar, F18). Último commit `78fdd5e`
@@ -51,9 +68,11 @@
 ## 5. Próximos pasos
 - [x] ✅ **Dominio `soleiltech.cl` COMPRADO** en NIC Chile (2026-10-07). Falta configurar DNS (Cloudflare) al desplegar.
 - [ ] Repo privado en GitHub (cuenta de la empresa) — Fase 6, postergada.
-- [ ] **Despliegue (F18):** el CHECKLIST dice "Vercel", pero la preferencia actual de
-      SoleilTech es **Cloudflare Pages** como hosting primario → decidir y actualizar
-      `docs/02-STACK.md`/`DECISIONES.md` antes de desplegar.
+- [x] **Hosting decidido: Cloudflare Pages** (export estático) — ADR en
+      `docs/DECISIONES.md` (2026-10-10); runbook en `docs/06-PRODUCCION.md`.
+- [ ] **Despliegue (F18):** crear cuenta Cloudflare + repo GitHub empresa → conectar y
+      desplegar (pendiente de autorización G5).
 - [ ] Al tener RUT: mostrar razón social + RUT en footer, `/terminos` y `/privacidad`.
 - [ ] Reemplazar el estado vacío de `/proyectos` cuando haya proyectos publicables.
-- **Decisiones pendientes del usuario:** hosting (Cloudflare vs Vercel) y fecha de deploy.
+- **Decisiones pendientes del usuario:** autorización de deploy (G5) y su fecha. (Hosting
+  ya decidido: Cloudflare Pages.)

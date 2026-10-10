@@ -40,7 +40,7 @@ diferir de lo conocido. Antes de escribir código nuevo, consultar
 |---|---|---|---|
 | [Web3Forms](https://web3forms.com) | Envío del formulario de contacto al correo de la empresa | Gratis (250 envíos/mes) | `NEXT_PUBLIC_WEB3FORMS_KEY` (clave pública por diseño; se crea con el correo receptor) |
 | WhatsApp (deep links `wa.me`) | Canal de contacto directo y fallback del formulario | Gratis | No requiere |
-| Vercel (previsto, no activo) | Hosting + HTTPS + deploy automático | Gratis (plan hobby) | Pendiente — decisión del usuario: postergado |
+| Cloudflare Pages (decidido 2026-10-10) | Hosting estático + HTTPS + CDN global | Gratis | Decidido (ADR en DECISIONES.md); deploy pendiente G5 |
 | NIC Chile (previsto) | Dominio `soleiltech.cl` | ~$10.000 CLP/año | Pendiente de compra |
 
 **Límite conocido de Web3Forms**: solo notifica al dueño de la cuenta; no
@@ -54,7 +54,7 @@ la v2 debe sumar Resend/Postmark con dominio propio.
 | `NEXT_PUBLIC_WEB3FORMS_KEY` | Access Key pública de Web3Forms para el formulario de `/contacto`. Si falta, el formulario degrada al fallback de WhatsApp. | Crear cuenta gratis en web3forms.com con el correo receptor |
 
 Local: copiar `.env.example` a `.env.local` y completar. Producción: variables
-del hosting (Vercel → Project Settings → Environment Variables).
+del hosting (Cloudflare Pages → Settings → Variables and Secrets).
 
 ## Comandos
 

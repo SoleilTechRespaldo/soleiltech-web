@@ -4,6 +4,50 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-10-10 — ADR: Hosting en Cloudflare Pages (export estático) + un solo dominio
+
+**Estado:** Aceptada (ejecutada en código; despliegue pendiente de la puerta G5).
+
+**Contexto:** el sitio es una landing **estática** (sin SSR ni API; el formulario
+usa Web3Forms del lado del cliente). La skill `crear-proyecto` actualizada fija
+"Cloudflare primero" como hosting, y la cartera de SoleilTech converge en **una
+sola cuenta Cloudflare** bajo **un solo dominio**.
+
+**Decisión:**
+1. **Hosting = Cloudflare Pages** con **export estático** (`output: export` → `out/`),
+   en vez de Vercel. Sin adaptador (OpenNext/next-on-pages): el sitio no usa features
+   dinámicas de Next.
+2. **Headers de seguridad en `public/_headers`** (Cloudflare los aplica) + copia en
+   `next.config.ts` (`headers()`) para probar en local. Se añadió **CSP** sin nonces.
+3. **Un solo dominio de marca** `soleiltech.cl`; los productos van como
+   **subrutas/subdominios** (ej. `/lumenstock`, ya en el repo), no un dominio por
+   producto. DNS en Cloudflare (nameservers de NIC Chile → Cloudflare).
+
+**Opciones consideradas:**
+
+| Opción | Complejidad | Costo | Encaje con el stack |
+|---|---|---|---|
+| **Cloudflare Pages estático** (elegida) | Baja | Free | Alto (cartera en Cloudflare) |
+| Next completo en Cloudflare (OpenNext / next-on-pages) | Media-alta | Free | Alto, pero innecesario sin SSR |
+| Vercel (Next nativo) | Baja | Free (Hobby) | Menor (la preferencia es Cloudflare) |
+
+**Trade-offs / consecuencias:** se pierden la optimización de imágenes en runtime y
+el middleware de Next — que este sitio **no usa** (las imágenes son assets; sin
+middleware). A cambio: CDN global, free-tier, un panel único para toda la cartera, y
+se evita el gotcha de deploy por REST de Vercel. Si a futuro el sitio necesita SSR o
+backend, se revisa migrar al adaptador OpenNext (Workers).
+
+**Acciones hechas:** CSP + `public/_headers`; runbook `06-PRODUCCION.md` pasado a
+Cloudflare. **Pendiente (G5):** crear la cuenta Cloudflare, conectar el repo, desplegar.
+
+## 2026-10-10 — Dependencias al día: Next 16.2.10 → 16.4.0
+
+`npm audit` reportaba vulnerabilidades (sharp/libvips/libheif/librsvg, source-map-js).
+Se subió **Next a 16.4.0** (+ `eslint-config-next`) y se corrió `npm audit fix`.
+Resultado: **producción con 0 vulnerabilidades**; quedan 5 "high" **solo en el chain
+de eslint (dev)** —`braces`/`micromatch`/`fast-glob`, no se despliegan—, aceptadas por
+ahora (su fix forzaría un cambio mayor del toolchain de lint). Build y lint en verde.
+
 ## 2026-07-07 — Build/dev con Webpack (Smart App Control bloquea Turbopack)
 
 **Contexto:** Windows Smart App Control (activo/enforzado en el PC de Nicolás,
