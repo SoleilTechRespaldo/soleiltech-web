@@ -19,17 +19,17 @@ const valueProps = [
   {
     icon: Network,
     title: "Pensado para crecer contigo",
-    text: "Empezamos con software; la infraestructura técnica en terreno se suma futuramente.",
+    text: "Partimos por lo que tu negocio necesita hoy y sumamos capacidades a medida que creces, sin rehacer todo.",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="border-b border-border bg-surface">
+      <section className="border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:items-center md:py-28">
           <div className="text-center md:text-left">
-            <div className="flex flex-wrap justify-center gap-2 md:justify-start">
+            <div className="animate-rise flex flex-wrap justify-center gap-2 md:justify-start">
               {heroBadges.map((badge) => (
                 <span
                   key={badge.label}
@@ -43,37 +43,52 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <h1 className="mt-5 font-display text-4xl leading-tight tracking-tight sm:text-5xl">
+            <h1
+              className="animate-rise mt-5 font-display text-4xl leading-tight tracking-tight sm:text-5xl"
+              style={{ animationDelay: "70ms" }}
+            >
               Su próximo amanecer digital
             </h1>
-            <p className="mx-auto mt-5 max-w-lg text-base text-muted-foreground sm:text-lg md:mx-0">
-              Desarrollamos software, apps móviles y sitios web para
-              empresas chilenas de todos los tamaños. La instalación de
-              redes, cámaras e infraestructura informática en terreno se
-              suma futuramente.
+            <p
+              className="animate-rise mx-auto mt-5 max-w-lg text-base text-muted-foreground sm:text-lg md:mx-0"
+              style={{ animationDelay: "140ms" }}
+            >
+              Desarrollamos software, apps móviles y sitios web para empresas
+              chilenas de todos los tamaños — con recomendación profesional en
+              cada proyecto.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+            <div
+              className="animate-rise mt-8 flex flex-wrap justify-center gap-3 md:justify-start"
+              style={{ animationDelay: "210ms" }}
+            >
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-card transition hover:-translate-y-0.5 hover:opacity-90"
               >
                 Solicitar cotización
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <WhatsAppButton className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:text-secondary" />
+              <WhatsAppButton className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground transition hover:border-secondary hover:text-secondary" />
             </div>
           </div>
 
-          <HeroIllustration />
+          <div className="animate-rise" style={{ animationDelay: "140ms" }}>
+            <HeroIllustration />
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid gap-8 md:grid-cols-3">
           {valueProps.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-border bg-surface p-6">
-              <item.icon className="h-8 w-8 text-secondary" />
-              <h2 className="mt-4 text-lg font-semibold">{item.title}</h2>
+            <div
+              key={item.title}
+              className="card-elevated reveal rounded-2xl border border-border bg-surface p-6"
+            >
+              <span className="icon-tile">
+                <item.icon className="h-6 w-6" />
+              </span>
+              <h2 className="mt-5 text-lg font-semibold">{item.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
             </div>
           ))}
@@ -86,7 +101,7 @@ export default function Home() {
             <div>
               <h2 className="font-display text-2xl sm:text-3xl">Qué hacemos</h2>
               <p className="mt-2 text-muted-foreground">
-                Servicios activos hoy — los que vienen en camino están marcados.
+                Software, apps y sitios web, pensados para tu operación.
               </p>
             </div>
             <Link
@@ -102,7 +117,7 @@ export default function Home() {
               service.comingSoon ? (
                 <div
                   key={service.slug}
-                  className="coming-soon-block rounded-2xl border border-border bg-background p-6"
+                  className="coming-soon-block reveal rounded-2xl border border-border bg-background p-6"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="text-base font-semibold text-muted-foreground">
@@ -116,7 +131,7 @@ export default function Home() {
                 <Link
                   key={service.slug}
                   href={`/servicios#${service.slug}`}
-                  className="group rounded-2xl border border-border bg-background p-6 transition hover:border-primary"
+                  className="card-elevated reveal group rounded-2xl border border-border bg-background p-6 transition hover:border-primary"
                 >
                   <h3 className="text-base font-semibold group-hover:text-primary">
                     {service.title}
@@ -137,7 +152,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground sm:px-16">
+        <div className="cta-sunrise reveal rounded-3xl px-8 py-14 text-center sm:px-16">
           <h2 className="font-display text-2xl sm:text-3xl">
             ¿Tienes un proyecto o requerimiento técnico?
           </h2>
@@ -148,7 +163,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/contacto"
-              className="rounded-full bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:opacity-90"
+              className="rounded-full bg-background px-6 py-3 text-sm font-semibold text-foreground shadow-card transition hover:-translate-y-0.5 hover:opacity-90"
             >
               Completar formulario
             </Link>

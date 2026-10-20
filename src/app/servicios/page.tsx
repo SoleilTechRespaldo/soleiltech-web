@@ -17,7 +17,7 @@ import { services } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Desarrollo de software, apps móviles y sitios web en Chile. Infraestructura técnica en terreno, futuramente.",
+    "Desarrollo de software, apps móviles y sitios web para empresas en Chile, con recomendación profesional en cada proyecto.",
 };
 
 const serviceIcons: Record<string, LucideIcon> = {
@@ -28,6 +28,13 @@ const serviceIcons: Record<string, LucideIcon> = {
   "infraestructura-ti": Server,
 };
 
+// Micro-animación "acorde" a cada servicio (keyframes en globals.css).
+const serviceAnim: Record<string, string> = {
+  "desarrollo-software": "anim-code", // cursor que parpadea
+  "apps-moviles": "anim-mobile", // leve rebote, como una notificación
+  "sitios-y-tiendas-web": "anim-web", // giro lento del globo
+};
+
 export default function ServiciosPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -36,10 +43,9 @@ export default function ServiciosPage() {
           Servicios
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Hoy desarrollamos software, apps y sitios web. La infraestructura
-          técnica en terreno está marcada como futuramente. Cada proyecto
-          parte con una conversación para entender tu requerimiento real
-          antes de proponer una solución.
+          Desarrollamos software, apps y sitios web. Cada proyecto parte con una
+          conversación para entender tu requerimiento real antes de proponer una
+          solución.
         </p>
       </div>
 
@@ -50,7 +56,7 @@ export default function ServiciosPage() {
           <div
             key={service.slug}
             id={service.slug}
-            className={`scroll-mt-24 border-t border-border pt-10 ${
+            className={`reveal scroll-mt-24 border-t border-border pt-10 ${
               service.comingSoon ? "coming-soon-block" : ""
             }`}
           >
@@ -64,7 +70,9 @@ export default function ServiciosPage() {
                 >
                   <Icon
                     className={`h-5 w-5 ${
-                      service.comingSoon ? "text-muted-foreground" : "text-primary"
+                      service.comingSoon
+                        ? "text-muted-foreground"
+                        : `text-primary ${serviceAnim[service.slug] ?? ""}`
                     }`}
                   />
                 </span>
@@ -94,7 +102,7 @@ export default function ServiciosPage() {
         })}
       </div>
 
-      <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
+      <div className="reveal shadow-card mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
         <h2 className="font-display text-xl sm:text-2xl">
           ¿No estás seguro qué servicio necesitas?
         </h2>

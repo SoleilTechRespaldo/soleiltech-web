@@ -80,7 +80,7 @@ export default function ComprarLumenStockPage() {
 
       {/* Precio */}
       <section className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-        <div className="rounded-2xl border-2 border-primary bg-surface p-8">
+        <div className="card-elevated reveal rounded-2xl border-2 border-primary bg-surface p-8">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-lg font-semibold">
@@ -112,7 +112,7 @@ export default function ComprarLumenStockPage() {
             {steps.map((s, i) => (
               <li
                 key={s.title}
-                className="rounded-2xl border border-border bg-background p-6"
+                className="card-elevated reveal rounded-2xl border border-border bg-background p-6"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                   {i + 1}
@@ -132,7 +132,7 @@ export default function ComprarLumenStockPage() {
           {pagos.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="card-elevated reveal rounded-2xl border border-border bg-surface p-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
                 <p.icon className="h-5 w-5 text-primary" />
@@ -142,7 +142,7 @@ export default function ComprarLumenStockPage() {
             </div>
           ))}
         </div>
-        <div className="mt-8 rounded-2xl border border-border bg-surface p-6">
+        <div className="mt-8 card-elevated reveal rounded-2xl border border-border bg-surface p-6">
           <ul className="flex flex-col gap-3 text-sm">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -168,7 +168,7 @@ export default function ComprarLumenStockPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-4 pb-20 sm:px-6">
-        <div className="rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground sm:px-16">
+        <div className="cta-sunrise reveal rounded-3xl px-8 py-14 text-center sm:px-16">
           <h2 className="font-display text-2xl sm:text-3xl">
             ¿Listo para comprarlo?
           </h2>

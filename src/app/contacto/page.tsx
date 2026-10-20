@@ -24,7 +24,7 @@ export default function ContactoPage() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
         <div className="flex flex-col gap-6">
-          <div className="rounded-2xl border border-border bg-surface p-6">
+          <div className="card-elevated reveal rounded-2xl border border-border bg-surface p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               Correo
             </h2>
@@ -37,7 +37,7 @@ export default function ContactoPage() {
             </a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-6">
+          <div className="card-elevated reveal rounded-2xl border border-border bg-surface p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               WhatsApp
             </h2>
@@ -52,7 +52,7 @@ export default function ContactoPage() {
             </a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface p-6">
+          <div className="card-elevated reveal rounded-2xl border border-border bg-surface p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               Cobertura
             </h2>
@@ -65,7 +65,7 @@ export default function ContactoPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <div className="reveal shadow-card rounded-2xl border border-border bg-surface p-6 sm:p-8">
           <ContactForm />
         </div>
       </div>

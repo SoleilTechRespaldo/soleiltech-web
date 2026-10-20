@@ -31,13 +31,22 @@ export type Service = {
   comingSoon?: boolean;
 };
 
-export const heroBadges = [
+export type HeroBadge = {
+  label: string;
+  scope?: string;
+  comingSoon?: boolean;
+};
+
+export const heroBadges: HeroBadge[] = [
   { label: "Software · apps · web", scope: "Trabajos nacionales" },
-  {
-    label: "Infraestructura en terreno",
-    scope: "Región de Valparaíso",
-    comingSoon: true,
-  },
+  // OCULTO — Badge de "infraestructura en terreno". Parqueado hasta iniciar esa
+  // línea de trabajo (va junto con `futureServices`, más abajo). Para mostrarlo
+  // de nuevo, descomentar este objeto:
+  // {
+  //   label: "Infraestructura en terreno",
+  //   scope: "Región de Valparaíso",
+  //   comingSoon: true,
+  // },
 ];
 
 export const services: Service[] = [
@@ -77,6 +86,14 @@ export const services: Service[] = [
       "Bases para SEO desde el primer día",
     ],
   },
+];
+
+// OCULTO — Servicios de infraestructura en terreno (redes/cámaras e
+// infraestructura TI). Parqueados hasta que de verdad se inicie esa línea de
+// trabajo. NO se renderizan en ninguna página: nadie importa `futureServices`.
+// Para MOSTRARLOS de nuevo: mover estos objetos al arreglo `services` de arriba
+// y descomentar el badge en `heroBadges`.
+export const futureServices: Service[] = [
   {
     slug: "redes-y-camaras",
     title: "Instalación de redes y cámaras",

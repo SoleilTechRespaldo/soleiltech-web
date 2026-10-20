@@ -185,7 +185,7 @@ export default function LumenStockPage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="card-elevated reveal rounded-2xl border border-border bg-surface p-6"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
                 <item.icon className="h-5 w-5 text-primary" />
@@ -209,7 +209,7 @@ export default function LumenStockPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-border bg-background p-6"
+                className="card-elevated reveal rounded-2xl border border-border bg-background p-6"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
                   <feature.icon className="h-5 w-5 text-primary" />
@@ -267,7 +267,7 @@ export default function LumenStockPage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="card-elevated reveal rounded-2xl border border-border bg-surface p-6"
             >
               <h3 className="text-base font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
@@ -343,7 +343,7 @@ export default function LumenStockPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border-2 border-primary bg-surface p-8">
+        <div className="card-elevated reveal mx-auto mt-10 max-w-3xl rounded-2xl border-2 border-primary bg-surface p-8">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
               <h3 className="text-lg font-semibold">
@@ -386,7 +386,7 @@ export default function LumenStockPage() {
           </ul>
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border bg-surface p-6">
+        <div className="mx-auto mt-8 max-w-3xl card-elevated reveal rounded-2xl border border-border bg-surface p-6">
           <ul className="flex flex-col gap-4 text-sm sm:text-base">
             <li className="flex items-start gap-3">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -460,7 +460,7 @@ export default function LumenStockPage() {
           {faqs.map((faq) => (
             <details
               key={faq.q}
-              className="group rounded-2xl border border-border bg-surface p-5"
+              className="reveal shadow-card group rounded-2xl border border-border bg-surface p-5"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold">
                 {faq.q}
@@ -474,7 +474,7 @@ export default function LumenStockPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
-        <div className="rounded-3xl bg-primary px-8 py-14 text-center text-primary-foreground sm:px-16">
+        <div className="cta-sunrise reveal rounded-3xl px-8 py-14 text-center sm:px-16">
           <h2 className="font-display text-2xl sm:text-3xl">
             ¿Quieres LumenStock en tu local?
           </h2>

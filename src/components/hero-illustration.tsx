@@ -1,6 +1,6 @@
 export function HeroIllustration() {
   return (
-    <div className="flex items-center justify-center rounded-2xl border border-border bg-background p-6">
+    <div className="shadow-card relative flex items-center justify-center overflow-hidden rounded-3xl border border-border bg-surface p-6">
       <svg
         viewBox="0 0 400 300"
         role="img"
@@ -12,10 +12,25 @@ export function HeroIllustration() {
             <stop offset="0%" stopColor="#DDB24E" />
             <stop offset="100%" stopColor="#C56A14" />
           </linearGradient>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#F4C85C" stopOpacity="0.6" />
+            <stop offset="55%" stopColor="#E89B3A" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#E89B3A" stopOpacity="0" />
+          </radialGradient>
           <clipPath id="sunClip">
             <rect x="0" y="0" width="400" height="150" />
           </clipPath>
         </defs>
+
+        {/* Halo cálido detrás del sol — "respira" con una animación suave de opacidad */}
+        <circle
+          className="sun-glow"
+          cx="200"
+          cy="150"
+          r="140"
+          fill="url(#sunGlow)"
+          clipPath="url(#sunClip)"
+        />
 
         <circle cx="200" cy="150" r="70" fill="url(#sunGradient)" clipPath="url(#sunClip)" />
         <g stroke="#C56A14" strokeWidth="3" strokeLinecap="round" opacity="0.6">

@@ -4,6 +4,12 @@ import type { NextConfig } from "next";
 // Cloudflare Pages (y para el demo portable). En ese modo Next NO aplica
 // headers() — los headers de seguridad los sirve Cloudflare vía `public/_headers`.
 const isStaticExport = process.env.BUILD_STATIC === "true";
+// En `next dev`, NODE_ENV === "development". NO aplicamos la CSP ahí: sin
+// 'unsafe-eval' rompe el Fast Refresh y la hidratación de Next en desarrollo
+// (p. ej. el botón de tema no alcanza a montarse y queda invisible). La CSP de
+// producción vive en `public/_headers` (Cloudflare) y en el `headers()` de abajo
+// para un eventual `next start`.
+const isDev = process.env.NODE_ENV === "development";
 
 // CSP sin nonces, apta para estático/SSG (ver references/lecciones-aprendidas →
 // Web de ventas). Permite: self; estilos/scripts inline (Next/Tailwind/next-themes);
@@ -42,7 +48,7 @@ const nextConfig: NextConfig = {
   }),
   // En build normal (`next start` / Vercel) Next aplica estos headers. En el
   // export para Cloudflare no corren → se replican en `public/_headers`.
-  ...(!isStaticExport && {
+  ...(!isStaticExport && !isDev && {
     async headers() {
       return [{ source: "/:path*", headers: securityHeaders }];
     },

@@ -14,8 +14,7 @@ export default function TerminosPage() {
         <p>
           Estos términos describen las condiciones generales bajo las que{" "}
           {siteConfig.name} presta sus servicios de desarrollo de software,
-          aplicaciones, sitios web e instalación de infraestructura
-          tecnológica en Chile.
+          aplicaciones y sitios web en Chile.
         </p>
         <p>
           <strong className="text-foreground">Alcance del trabajo:</strong>{" "}

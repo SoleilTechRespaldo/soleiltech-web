@@ -27,10 +27,14 @@ export default function ProyectosPage() {
           <Link
             key={project.slug}
             href={project.href}
-            className="group flex flex-col rounded-2xl border border-border bg-surface p-6 transition hover:border-primary"
+            className="card-elevated reveal group flex flex-col rounded-2xl border border-border bg-surface p-6 transition hover:border-primary"
           >
             <div className="flex items-center gap-4">
-              {project.slug === "lumenstock" && <LumenStockMark size={52} />}
+              {project.slug === "lumenstock" && (
+                <span className="anim-float inline-flex transition group-hover:scale-105">
+                  <LumenStockMark size={52} />
+                </span>
+              )}
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <h2 className="font-display text-xl transition group-hover:text-primary">
@@ -52,7 +56,7 @@ export default function ProyectosPage() {
         ))}
       </div>
 
-      <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
+      <div className="reveal shadow-card mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
         <h2 className="font-display text-xl sm:text-2xl">
           ¿Tienes un proyecto en mente?
         </h2>
@@ -63,7 +67,7 @@ export default function ProyectosPage() {
         <div className="mt-2 flex flex-wrap justify-center gap-3">
           <Link
             href="/contacto"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-card transition hover:-translate-y-0.5 hover:opacity-90"
           >
             Conversemos <ArrowRight className="h-4 w-4" />
           </Link>

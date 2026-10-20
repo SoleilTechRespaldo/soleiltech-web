@@ -12,6 +12,24 @@
 
 ## 2. Estado por sesión (la más reciente arriba)
 
+### Sesión 2026-10-20 — Pulido visual + ocultar infraestructura + fix CSP dev · IA: Claude (Clau)
+- **Estado al terminar:** **pulido estético "alto impacto"** aplicado y **propagado a
+  TODAS las páginas** (aura ambiental uniforme y fija, sombras + elevación, tiles de
+  ícono, CTA con degradado "amanecer" —atenuado en oscuro—, y micro-animaciones con
+  `prefers-reduced-motion`; animaciones "acorde a cada servicio" en `/servicios` y
+  `.anim-float` en `/proyectos`). **Lint 0** y **build estático en verde**. Primitivas en
+  `docs/03-DISENO.md` → "Pulido visual"; ADR en `docs/DECISIONES.md` (2026-10-20).
+- **Contenido:** se **ocultó** todo lo de "infraestructura en terreno" (redes/cámaras +
+  infra TI) hasta iniciar esa línea; **parqueado y restaurable** en `site-config.ts`
+  (`futureServices` + badge comentado). Copy limpiado en home/servicios/nosotros/términos.
+- **Fix:** la CSP rompía el **Fast Refresh/hidratación en `next dev`** (el botón de tema y
+  el logo no montaban) → la CSP ahora aplica **solo en producción**. Producción intacta.
+- **Correo `@soleiltech.cl`:** quedó **100% operativo** en Zoho (MX+SPF+DKIM+DMARC;
+  casilla `nicolas.jerez@` + alias `contacto@`) — detalle en la memoria del proyecto.
+- **Para la otra IA (Cody):** revisar el pulido (contraste y layout en todas las páginas)
+  y el fix de CSP dev. **Pendiente del usuario:** decidir el push a un **GitHub privado**
+  (el repo sigue **100% local, sin remoto**) y el despliegue (G5).
+
 ### Sesión 2026-10-10 — Auditoría + actualización al estándar de la skill (Cloudflare, CSP, deps) · IA: Claude (Clau)
 - **Estado al terminar:** auditoría completa (seguridad / diseño / código) contra la
   skill actualizada. **Aplicado y verificado:** (1) **Next 16.2.10→16.4.0** → `npm audit`

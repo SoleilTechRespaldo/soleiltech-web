@@ -4,6 +4,36 @@
 > Las decisiones mayores se confirman en las puertas de control (G1–G5);
 > las menores se registran aquí para que sean auditables.
 
+## 2026-10-20 — Pulido visual, ocultar "infraestructura en terreno" y CSP solo en producción
+
+**Estado:** Aceptada (en código; sin desplegar).
+
+**1. Pulido visual "alto impacto"** (el usuario eligió esta opción sobre otras dos).
+Se elevó el sitio **dentro de la identidad de marca** (sin cambiar paleta, logo ni
+estructura). Primitivas nuevas en `globals.css` (detalle en `03-DISENO.md` → "Pulido
+visual"): **aura ambiental** uniforme y fija en toda la página; **sombras cálidas** +
+elevación al hover (`.card-elevated` / `.shadow-card`); **tiles de ícono**
+(`.icon-tile`, `.icon-tile-primary`); **CTA "amanecer"** con degradado (`.cta-sunrise`,
+**atenuado en oscuro** a pedido del usuario); y **micro-animaciones** (`.animate-rise`,
+`.reveal` scroll-driven con fallback, `.sun-glow`, animaciones "acorde a cada servicio"
+en `/servicios` y `.anim-float` en `/proyectos`). Todo respeta **WCAG** (contraste
+verificado) y **`prefers-reduced-motion`**. Propagado a todas las páginas. Lint 0 + build
+estático en verde.
+
+**2. Ocultar "infraestructura en terreno"** (redes/cámaras + infraestructura TI): a
+pedido del usuario, **ocultar hasta iniciar de verdad esa línea de trabajo**. NO se
+borró: los dos servicios quedan **parqueados** en `site-config.ts` → `futureServices`
+(nadie los importa → no se renderizan) y el badge del hero quedó **comentado**. Se quitó
+toda mención en copy (home, servicios, nosotros, términos). **Para reactivarlo:** mover
+`futureServices` → `services` y descomentar el badge (pedir *"mostrar infraestructura"*).
+
+**3. CSP solo en producción (fix de dev).** La CSP sin `'unsafe-eval'` que sirve
+`next.config.ts` rompía en **`next dev`** el Fast Refresh y la **hidratación** de Next
+(síntoma: el botón de tema y el logo se quedaban en su estado inicial — logo cobre en
+modo oscuro). Se cambió a aplicar `headers()` **solo cuando `NODE_ENV !== 'development'`**.
+Producción intacta: la CSP la sirve Cloudflare vía `public/_headers` (y `headers()` para
+un eventual `next start`).
+
 ## 2026-10-10 — ADR: Hosting en Cloudflare Pages (export estático) + un solo dominio
 
 **Estado:** Aceptada (ejecutada en código; despliegue pendiente de la puerta G5).

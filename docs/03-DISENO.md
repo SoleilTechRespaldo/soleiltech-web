@@ -32,11 +32,16 @@
 | `--surface` | `#ffffff` | `#121C44` |
 | `--surface-muted` | `#F4E4D0` | `#16204a` |
 | `--border` | `#E8D5B8` | `#22305f` |
-| `--primary` | `#C56A14` | `#DDB24E` |
+| `--primary` | `#A85808` ¹ | `#DDB24E` |
 | `--primary-foreground` | `#ffffff` | `#0B1437` |
 | `--secondary` | `#0E8FE0` | `#0E8FE0` |
-| `--secondary-foreground` | `#ffffff` | `#ffffff` |
-| `--muted-foreground` | `#8A6A45` | `#9FB0C8` |
+| `--secondary-foreground` | `#0B1437` | `#0B1437` |
+| `--muted-foreground` | `#6F5335` | `#9FB0C8` |
+| `--badge-foreground` | `#7A3D08` | `#DDB24E` |
+
+¹ `--primary` claro se oscureció de `#C56A14` a `#A85808` por contraste WCAG
+(blanco sobre primario); **el logo conserva `#C56A14`** (incrustado en los SVG).
+Ver `DECISIONES.md` (2026-07-07).
 
 Los tokens se exponen a Tailwind v4 con `@theme inline`
 (`bg-primary`, `text-muted-foreground`, etc.). El modo oscuro se activa con la
@@ -65,8 +70,34 @@ Detalle distintivo: textura de ruido SVG sobre el fondo
   - Focus: borde `--primary` en inputs; skip-link visible al enfocar.
   - Disabled: `opacity-60` + `cursor-not-allowed`.
   - Error: caja con borde `secondary/40` + mensaje y acción alternativa (WhatsApp).
-  - Próximamente: `.coming-soon-block` (opacidad 0.6, borde discontinuo) + `ComingSoonBadge`.
+  - Futuro/oculto: los servicios de "infraestructura en terreno" están
+    **parqueados** en `site-config.ts` → `futureServices` (no se renderizan hasta
+    reactivarlos). `.coming-soon-block` (borde discontinuo, **sin** opacidad) +
+    `ComingSoonBadge` quedan listos para cuando vuelvan.
 - **Selección de texto**: fondo primario, texto sobre primario.
+
+## Pulido visual (2026-10-20)
+
+Capa de profundidad y movimiento sobre el design system, **dentro de la marca**
+(sin cambiar paleta ni estructura). Definida en `globals.css`; respeta WCAG y
+`prefers-reduced-motion`. Propagada a todas las páginas.
+
+- **Aura ambiental:** degradados radiales **fijos** (glow cálido arriba-derecha +
+  guiño cian abajo-izquierda) sobre `--background`, uniformes en toda la página y en
+  ambos temas. Viven en `body` con `background-attachment: fixed`.
+- **Sombras cálidas:** tokens `--shadow-card` / `--shadow-lift`. Clases `.shadow-card`
+  (estática) y `.card-elevated` (sombra + elevación `-4px` al hover).
+- **Tiles de ícono:** `.icon-tile` (tinte cian/secundario) y `.icon-tile-primary`
+  (tinte primario) — 3rem redondeados con anillo interior.
+- **CTA "amanecer":** `.cta-sunrise` — degradado + glow, con tokens `--cta-from/to/
+  glow/fg` por tema (en oscuro **atenuado** a oro bronce, texto azul noche ≥4.5:1).
+  Reemplaza el bloque `bg-primary` plano en todos los CTA.
+- **Micro-animaciones** (todas bajo `prefers-reduced-motion: no-preference`):
+  `.animate-rise` (entrada del hero con stagger), `.reveal` (aparición al hacer
+  scroll; solo opacidad, `animation-timeline: view()` con `@supports` y fallback
+  visible), `.sun-glow` (halo del sol que "respira"), y animaciones **acorde a cada
+  servicio** en `/servicios` (`.anim-code` cursor, `.anim-mobile` rebote, `.anim-web`
+  globo) y `.anim-float` en `/proyectos`.
 
 ## Iconografía
 

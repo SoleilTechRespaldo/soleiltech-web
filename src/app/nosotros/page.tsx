@@ -36,8 +36,7 @@ export default function NosotrosPage() {
         SoleilTech nace para acompañar a empresas grandes y pequeñas en
         todo el territorio nacional, en su transformación tecnológica,
         desarrollando el software, las apps y los sitios web y móviles que
-        necesiten; futuramente, con la instalación de redes, cámaras e
-        infraestructura en terreno.
+        necesiten.
       </p>
       <p className="mt-3 max-w-2xl text-center text-sm text-muted-foreground sm:text-left">
         Hasta el sitio tiene su propio amanecer y anochecer — el botón de
@@ -46,15 +45,20 @@ export default function NosotrosPage() {
 
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {pillars.map((p) => (
-          <div key={p.title} className="rounded-2xl border border-border bg-surface p-6">
-            <p.icon className="h-8 w-8 text-primary" />
-            <h2 className="mt-4 text-lg font-semibold">{p.title}</h2>
+          <div
+            key={p.title}
+            className="card-elevated reveal rounded-2xl border border-border bg-surface p-6"
+          >
+            <span className="icon-tile-primary">
+              <p.icon className="h-6 w-6" />
+            </span>
+            <h2 className="mt-5 text-lg font-semibold">{p.title}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
+      <div className="reveal shadow-card mt-16 flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface px-8 py-12 text-center">
         <h2 className="font-display text-xl sm:text-2xl">
           Conversemos sobre tu proyecto
         </h2>
