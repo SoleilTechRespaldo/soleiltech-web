@@ -27,8 +27,10 @@
 - **Correo `@soleiltech.cl`:** quedó **100% operativo** en Zoho (MX+SPF+DKIM+DMARC;
   casilla `nicolas.jerez@` + alias `contacto@`) — detalle en la memoria del proyecto.
 - **Para la otra IA (Cody):** revisar el pulido (contraste y layout en todas las páginas)
-  y el fix de CSP dev. **Pendiente del usuario:** decidir el push a un **GitHub privado**
-  (el repo sigue **100% local, sin remoto**) y el despliegue (G5).
+  y el fix de CSP dev. **Respaldo en la nube (2026-10-24):** el repo quedó en **GitHub
+  privado** `SoleilTechRespaldo/soleiltech-web` (`origin/main`) — es respaldo, **NO** está
+  publicado en internet. **Pendiente del usuario:** el **despliegue a Cloudflare Pages
+  (G5)**, que es el paso que recién lo haría público.
 
 ### Sesión 2026-10-10 — Auditoría + actualización al estándar de la skill (Cloudflare, CSP, deps) · IA: Claude (Clau)
 - **Estado al terminar:** auditoría completa (seguridad / diseño / código) contra la
